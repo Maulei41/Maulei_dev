@@ -2,8 +2,20 @@ import { motion, useMotionValue, useSpring } from 'framer-motion'
 import { useEffect, useState, useCallback } from 'react'
 
 export default function MagneticCursor() {
+  const [isMobile, setIsMobile] = useState(true)
   const [visible, setVisible] = useState(false)
   const [isPullActive, setIsPullActive] = useState(false)
+
+  // Disable on touch devices (no fine pointer)
+  useEffect(() => {
+    const mq = window.matchMedia('(any-pointer: coarse)')
+    setIsMobile(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
+
+  if (isMobile) return null
 
   const cursorX = useMotionValue(-100)
   const cursorY = useMotionValue(-100)
