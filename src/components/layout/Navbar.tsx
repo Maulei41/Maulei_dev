@@ -157,7 +157,7 @@ export default function Navbar() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="fixed top-0 right-0 bottom-0 w-72 bg-bg-primary border-l border-neutral-800/30 shadow-2xl md:hidden flex flex-col z-50"
+              className="fixed top-0 right-0 bottom-0 w-72 bg-bg-primary bg-gradient-to-b from-accent/[0.03] via-bg-primary to-bg-primary border-l border-neutral-800/30 shadow-2xl md:hidden flex flex-col z-50"
             >
               {/* Drawer header */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-800/20">
