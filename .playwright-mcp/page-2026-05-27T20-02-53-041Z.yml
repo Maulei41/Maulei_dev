@@ -1,0 +1,429 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "Angus" [ref=e6] [cursor=pointer]:
+        - /url: "#home"
+      - generic [ref=e7]:
+        - link "Home" [ref=e8] [cursor=pointer]:
+          - /url: "#home"
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: "#about"
+        - link "Projects" [ref=e10] [cursor=pointer]:
+          - /url: "#projects"
+        - link "Experience" [ref=e11] [cursor=pointer]:
+          - /url: "#experience"
+        - link "Contact" [ref=e12] [cursor=pointer]:
+          - /url: "#contact"
+      - link "Get in touch" [ref=e13] [cursor=pointer]:
+        - /url: "#contact"
+  - main [ref=e14]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - generic [ref=e20]: Welcome
+          - heading "Building intelligent systems with engineering precision" [level=1] [ref=e21]:
+            - generic [ref=e22]: Building intelligent
+            - generic [ref=e23]: systems with
+            - generic [ref=e24]: engineering precision
+        - paragraph [ref=e25]: Software Engineer focused on building scalable applications and delivering clean, impactful solutions. Specializing in distributed systems, cloud infrastructure, and high-performance services.
+        - generic [ref=e26]:
+          - link "View Projects" [ref=e27] [cursor=pointer]:
+            - /url: "#projects"
+            - text: View Projects
+            - img [ref=e28]
+          - link "Get in Touch" [ref=e30] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=e31]:
+          - generic [ref=e32]:
+            - generic [ref=e33]: 20+
+            - generic [ref=e34]: Projects
+          - generic [ref=e35]:
+            - generic [ref=e36]: 8y
+            - generic [ref=e37]: Experience
+          - generic [ref=e38]:
+            - generic [ref=e39]: 15+
+            - generic [ref=e40]: Technologies
+      - img [ref=e43]
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - text: About Me
+        - heading "Who I Am" [level=2] [ref=e71]
+      - generic [ref=e72]:
+        - generic [ref=e73]:
+          - generic [ref=e74]:
+            - heading "What I Build" [level=3] [ref=e75]
+            - paragraph [ref=e76]: I'm a software engineer passionate about building systems that work reliably at scale. My focus is on distributed systems, cloud infrastructure, and creating solutions that solve real problems with elegant engineering.
+          - generic [ref=e77]:
+            - heading "How I Think" [level=3] [ref=e78]
+            - paragraph [ref=e79]: "I approach engineering with discipline and intentionality. Every decision is guided by principles: simplicity, performance, reliability, and maintainability. I believe that good systems are built on deep understanding of fundamentals, not just patterns."
+          - generic [ref=e80]:
+            - heading "Engineering Philosophy" [level=3] [ref=e81]
+            - list [ref=e82]:
+              - listitem [ref=e83]:
+                - generic [ref=e84]: →
+                - generic [ref=e85]: Write code that scales in complexity and performance
+              - listitem [ref=e86]:
+                - generic [ref=e87]: →
+                - generic [ref=e88]: Prioritize clarity and maintainability over cleverness
+              - listitem [ref=e89]:
+                - generic [ref=e90]: →
+                - generic [ref=e91]: Measure everything - observability is non-negotiable
+              - listitem [ref=e92]:
+                - generic [ref=e93]: →
+                - generic [ref=e94]: Design systems that fail gracefully
+              - listitem [ref=e95]:
+                - generic [ref=e96]: →
+                - generic [ref=e97]: Document decisions, not just code
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - img [ref=e101]
+            - heading "Scalable Architecture" [level=4] [ref=e105]
+            - paragraph [ref=e106]: Designing systems that grow efficiently with demand and complexity.
+          - generic [ref=e107]:
+            - img [ref=e109]
+            - heading "AI Systems" [level=4] [ref=e117]
+            - paragraph [ref=e118]: Building intelligent systems that leverage machine learning at scale.
+          - generic [ref=e119]:
+            - img [ref=e121]
+            - heading "High Performance" [level=4] [ref=e123]
+            - paragraph [ref=e124]: Optimizing systems for speed, efficiency, and reliability.
+          - generic [ref=e125]:
+            - img [ref=e127]
+            - heading "Data Technologies" [level=4] [ref=e131]
+            - paragraph [ref=e132]: Working with large-scale data processing and real-time analytics.
+      - generic [ref=e133]:
+        - heading "Core Technologies" [level=3] [ref=e134]
+        - generic [ref=e135]:
+          - generic [ref=e136]: Go
+          - generic [ref=e137]: Rust
+          - generic [ref=e138]: Python
+          - generic [ref=e139]: Java
+          - generic [ref=e140]: Kubernetes
+          - generic [ref=e141]: Docker
+          - generic [ref=e142]: PostgreSQL
+          - generic [ref=e143]: Redis
+          - generic [ref=e144]: gRPC
+          - generic [ref=e145]: Kafka
+          - generic [ref=e146]: Spark
+          - generic [ref=e147]: AWS
+          - generic [ref=e148]: System Design
+          - generic [ref=e149]: Distributed Systems
+          - generic [ref=e150]: Microservices
+          - generic [ref=e151]: Cloud Architecture
+    - generic [ref=e154]:
+      - generic [ref=e155]:
+        - text: Portfolio
+        - heading "Featured Projects" [level=2] [ref=e156]
+        - paragraph [ref=e157]: A selection of projects showcasing my approach to building scalable, high-performance systems.
+      - generic [ref=e158]:
+        - generic [ref=e161]:
+          - generic [ref=e162]:
+            - generic [ref=e163]:
+              - heading "High-Performance Distributed Cache" [level=3] [ref=e164]
+              - paragraph [ref=e165]: Production-grade cache system serving 50K+ req/s with sub-millisecond latency
+            - paragraph [ref=e166]: Built a distributed caching layer using Redis and consistent hashing, optimizing database query performance by 85%. Implemented automatic failover and cluster management to ensure 99.99% uptime across multiple regions.
+            - paragraph [ref=e168]: 85% reduction in database load, 50K+ req/s throughput
+            - generic [ref=e169]:
+              - generic [ref=e170]: Redis
+              - generic [ref=e171]: Go
+              - generic [ref=e172]: gRPC
+              - generic [ref=e173]: Kubernetes
+              - generic [ref=e174]: etcd
+            - generic [ref=e175]:
+              - link "GitHub" [ref=e176] [cursor=pointer]:
+                - /url: https://github.com/angus/distributed-cache
+                - img [ref=e177]
+                - generic [ref=e181]: GitHub
+              - link "Live Demo" [ref=e182] [cursor=pointer]:
+                - /url: https://cache-perf-demo.engineering
+                - img [ref=e183]
+                - generic [ref=e187]: Live Demo
+          - generic [ref=e189]:
+            - generic [ref=e190]: "1"
+            - paragraph [ref=e191]: Featured Project
+        - generic [ref=e194]:
+          - generic [ref=e195]:
+            - generic [ref=e196]:
+              - heading "Real-Time ML Inference Pipeline" [level=3] [ref=e197]
+              - paragraph [ref=e198]: Scalable inference system for computer vision models with dynamic batching
+            - paragraph [ref=e199]: Engineered an inference pipeline supporting multiple model architectures with automatic batching and GPU optimization. Reduced inference latency by 60% through model quantization and TensorRT optimization.
+            - paragraph [ref=e201]: 60% latency reduction, 10K inferences/sec per GPU
+            - generic [ref=e202]:
+              - generic [ref=e203]: Python
+              - generic [ref=e204]: PyTorch
+              - generic [ref=e205]: TensorRT
+              - generic [ref=e206]: Docker
+              - generic [ref=e207]: FastAPI
+            - link "GitHub" [ref=e209] [cursor=pointer]:
+              - /url: https://github.com/angus/ml-inference
+              - img [ref=e210]
+              - generic [ref=e214]: GitHub
+          - generic [ref=e216]:
+            - generic [ref=e217]: "2"
+            - paragraph [ref=e218]: Featured Project
+        - generic [ref=e221]:
+          - generic [ref=e222]:
+            - generic [ref=e223]:
+              - heading "Microservices Platform Architecture" [level=3] [ref=e224]
+              - paragraph [ref=e225]: Complete service mesh implementation with observability and resilience patterns
+            - paragraph [ref=e226]: Designed and implemented a microservices platform with Istio service mesh, comprehensive observability through Prometheus/Grafana, and resilience patterns including circuit breakers, retries, and rate limiting.
+            - paragraph [ref=e228]: Reduced deployment time by 70%, improved system reliability to 99.99%
+            - generic [ref=e229]:
+              - generic [ref=e230]: Kubernetes
+              - generic [ref=e231]: Istio
+              - generic [ref=e232]: gRPC
+              - generic [ref=e233]: Prometheus
+              - generic [ref=e234]: Grafana
+              - generic [ref=e235]: Java
+              - generic [ref=e236]: Spring Boot
+            - link "GitHub" [ref=e238] [cursor=pointer]:
+              - /url: https://github.com/angus/microservices-platform
+              - img [ref=e239]
+              - generic [ref=e243]: GitHub
+          - generic [ref=e245]:
+            - generic [ref=e246]: "3"
+            - paragraph [ref=e247]: Featured Project
+      - generic [ref=e248]:
+        - heading "Other Notable Projects" [level=3] [ref=e249]
+        - generic [ref=e250]:
+          - generic [ref=e251]:
+            - heading "Real-Time Data Processing Pipeline" [level=4] [ref=e252]
+            - paragraph [ref=e253]: Stream processing system handling 1M+ events/sec with exactly-once semantics
+            - generic [ref=e254]:
+              - generic [ref=e255]: Kafka
+              - generic [ref=e256]: Flink
+              - generic [ref=e257]: Scala
+              - generic [ref=e258]: "+2"
+            - paragraph [ref=e259]: 1M+ events/sec with sub-second latency, 99.99% uptime
+            - link [ref=e261] [cursor=pointer]:
+              - /url: https://github.com/angus/data-pipeline
+              - img [ref=e262]
+          - generic [ref=e266]:
+            - heading "Intelligent API Gateway" [level=4] [ref=e267]
+            - paragraph [ref=e268]: Request routing and rate limiting with intelligent load balancing
+            - generic [ref=e269]:
+              - generic [ref=e270]: Rust
+              - generic [ref=e271]: tokio
+              - generic [ref=e272]: Protocol Buffers
+              - generic [ref=e273]: "+2"
+            - paragraph [ref=e274]: 100K req/s throughput, sub-10ms latency, 99.95% uptime
+            - link [ref=e276] [cursor=pointer]:
+              - /url: https://github.com/angus/api-gateway
+              - img [ref=e277]
+          - generic [ref=e281]:
+            - heading "Distributed Monitoring System" [level=4] [ref=e282]
+            - paragraph [ref=e283]: Metrics collection and alerting system for infrastructure at scale
+            - generic [ref=e284]:
+              - generic [ref=e285]: Prometheus
+              - generic [ref=e286]: Thanos
+              - generic [ref=e287]: Go
+              - generic [ref=e288]: "+2"
+            - paragraph [ref=e289]: Monitors 10K+ servers, 95% reduction in alert noise
+            - link [ref=e291] [cursor=pointer]:
+              - /url: https://github.com/angus/monitoring-system
+              - img [ref=e292]
+    - generic [ref=e298]:
+      - generic [ref=e299]:
+        - text: Career
+        - heading "Experience & Education" [level=2] [ref=e300]
+      - generic [ref=e302]:
+        - heading "Work Experience" [level=3] [ref=e303]
+        - generic [ref=e304]:
+          - generic [ref=e308]:
+            - generic [ref=e309]:
+              - heading "Senior Software Engineer" [level=3] [ref=e310]
+              - generic [ref=e311]: Jan 2022 — Present
+            - paragraph [ref=e312]: TechCorp Systems
+            - paragraph [ref=e313]: Lead architect for distributed systems infrastructure. Designed and implemented high-performance services handling millions of requests per second.
+            - list [ref=e314]:
+              - listitem [ref=e315]:
+                - img [ref=e316]
+                - generic [ref=e319]: Architected microservices platform serving 50M+ daily active users
+              - listitem [ref=e320]:
+                - img [ref=e321]
+                - generic [ref=e324]: Reduced infrastructure costs by 40% through optimization
+              - listitem [ref=e325]:
+                - img [ref=e326]
+                - generic [ref=e329]: Led team of 5 engineers on critical infrastructure projects
+              - listitem [ref=e330]:
+                - img [ref=e331]
+                - generic [ref=e334]: Implemented service mesh with 99.99% uptime SLA
+            - generic [ref=e335]:
+              - generic [ref=e336]: Go
+              - generic [ref=e337]: Rust
+              - generic [ref=e338]: Kubernetes
+              - generic [ref=e339]: gRPC
+              - generic [ref=e340]: PostgreSQL
+              - generic [ref=e341]: Redis
+          - generic [ref=e345]:
+            - generic [ref=e346]:
+              - heading "Staff Engineer - Infrastructure" [level=3] [ref=e347]
+              - generic [ref=e348]: Jul 2019 — Dec 2021
+            - paragraph [ref=e349]: DataScale Inc
+            - paragraph [ref=e350]: Owned infrastructure scaling and reliability. Built distributed systems processing petabytes of data daily.
+            - list [ref=e351]:
+              - listitem [ref=e352]:
+                - img [ref=e353]
+                - generic [ref=e356]: Designed event streaming platform handling 1M+ events/sec
+              - listitem [ref=e357]:
+                - img [ref=e358]
+                - generic [ref=e361]: Improved query latency by 75% through database optimization
+              - listitem [ref=e362]:
+                - img [ref=e363]
+                - generic [ref=e366]: Mentored junior engineers on systems design principles
+              - listitem [ref=e367]:
+                - img [ref=e368]
+                - generic [ref=e371]: Published 3 technical articles on distributed systems
+            - generic [ref=e372]:
+              - generic [ref=e373]: Java
+              - generic [ref=e374]: Scala
+              - generic [ref=e375]: Kafka
+              - generic [ref=e376]: Spark
+              - generic [ref=e377]: Cassandra
+              - generic [ref=e378]: AWS
+          - generic [ref=e382]:
+            - generic [ref=e383]:
+              - heading "Software Engineer" [level=3] [ref=e384]
+              - generic [ref=e385]: Jun 2017 — Jun 2019
+            - paragraph [ref=e386]: CloudFirst Technologies
+            - paragraph [ref=e387]: Built backend services and data pipelines. Developed expertise in scalable systems and cloud architecture.
+            - list [ref=e388]:
+              - listitem [ref=e389]:
+                - img [ref=e390]
+                - generic [ref=e393]: Developed high-frequency trading API (10K+ req/s)
+              - listitem [ref=e394]:
+                - img [ref=e395]
+                - generic [ref=e398]: Implemented automated deployment pipeline reducing release time by 80%
+              - listitem [ref=e399]:
+                - img [ref=e400]
+                - generic [ref=e403]: Optimized database queries improving application performance by 60%
+            - generic [ref=e404]:
+              - generic [ref=e405]: Python
+              - generic [ref=e406]: Java
+              - generic [ref=e407]: Docker
+              - generic [ref=e408]: Kubernetes
+              - generic [ref=e409]: MongoDB
+              - generic [ref=e410]: GCP
+          - generic [ref=e414]:
+            - generic [ref=e415]:
+              - heading "Software Engineering Intern" [level=3] [ref=e416]
+              - generic [ref=e417]: Summer 2016 — Fall 2016
+            - paragraph [ref=e418]: Innovation Labs
+            - paragraph [ref=e419]: First professional experience building production systems and learning industry best practices.
+            - list [ref=e420]:
+              - listitem [ref=e421]:
+                - img [ref=e422]
+                - generic [ref=e425]: Built real-time data processing system
+              - listitem [ref=e426]:
+                - img [ref=e427]
+                - generic [ref=e430]: Contributed to open-source projects
+              - listitem [ref=e431]:
+                - img [ref=e432]
+                - generic [ref=e435]: Mentored by senior engineers on software architecture
+            - generic [ref=e436]:
+              - generic [ref=e437]: C++
+              - generic [ref=e438]: Python
+              - generic [ref=e439]: MySQL
+      - generic [ref=e441]:
+        - heading "Education" [level=3] [ref=e442]
+        - generic [ref=e446]:
+          - generic [ref=e447]:
+            - heading "Bachelor of Science in Computer Science" [level=3] [ref=e448]
+            - generic [ref=e449]: 2013 — 2017
+          - paragraph [ref=e450]: University of Technology
+          - paragraph [ref=e451]: Strong foundation in algorithms, data structures, systems design, and software engineering principles.
+          - list [ref=e452]:
+            - listitem [ref=e453]:
+              - img [ref=e454]
+              - generic [ref=e457]: "GPA: 3.8/4.0"
+            - listitem [ref=e458]:
+              - img [ref=e459]
+              - generic [ref=e462]: Dean's List all semesters
+            - listitem [ref=e463]:
+              - img [ref=e464]
+              - generic [ref=e467]: "Capstone: \"Distributed Machine Learning Framework\""
+            - listitem [ref=e468]:
+              - img [ref=e469]
+              - generic [ref=e472]: Published research on concurrent data structures
+      - generic [ref=e473]:
+        - generic [ref=e474]:
+          - generic [ref=e475]: 8+
+          - generic [ref=e476]: Years Experience
+        - generic [ref=e477]:
+          - generic [ref=e478]: "3"
+          - generic [ref=e479]: Companies
+        - generic [ref=e480]:
+          - generic [ref=e481]: 20+
+          - generic [ref=e482]: Projects Led
+        - generic [ref=e483]:
+          - generic [ref=e484]: 15+
+          - generic [ref=e485]: Team Members Mentored
+    - generic [ref=e488]:
+      - generic [ref=e489]:
+        - text: Get In Touch
+        - heading "Let's Work Together" [level=2] [ref=e490]
+        - paragraph [ref=e491]: I'm always interested in hearing about new projects and opportunities. Feel free to reach out.
+      - link "Send me an email" [ref=e493] [cursor=pointer]:
+        - /url: mailto:angus@engineering.dev
+        - img [ref=e494]
+        - text: Send me an email
+      - generic [ref=e498]:
+        - paragraph [ref=e499]: "Or connect with me on:"
+        - generic [ref=e500]:
+          - link "GitHub" [ref=e501] [cursor=pointer]:
+            - /url: https://github.com/angus
+            - img [ref=e502]
+            - generic [ref=e506]: GitHub
+          - link "LinkedIn" [ref=e507] [cursor=pointer]:
+            - /url: https://linkedin.com/in/angus-engineer
+            - img [ref=e508]
+            - generic [ref=e514]: LinkedIn
+          - link "Email" [ref=e515] [cursor=pointer]:
+            - /url: mailto:angus@engineering.dev
+            - img [ref=e516]
+            - generic [ref=e519]: Email
+      - generic [ref=e520]:
+        - paragraph [ref=e521]: Download my resume to learn more about my background and experience.
+        - link "Download Resume" [ref=e522] [cursor=pointer]:
+          - /url: /resume.pdf
+          - img [ref=e523]
+          - text: Download Resume
+      - paragraph [ref=e527]: Built with React, Framer Motion, and Tailwind CSS. Optimized for performance and accessibility.
+  - contentinfo [ref=e528]:
+    - generic [ref=e529]:
+      - generic [ref=e530]:
+        - generic [ref=e531]:
+          - heading "Angus" [level=3] [ref=e532]
+          - paragraph [ref=e533]: Software Engineer building high-performance systems and scalable applications.
+        - generic [ref=e534]:
+          - heading "Quick Links" [level=4] [ref=e535]
+          - list [ref=e536]:
+            - listitem [ref=e537]:
+              - link "About" [ref=e538] [cursor=pointer]:
+                - /url: "#about"
+            - listitem [ref=e539]:
+              - link "Projects" [ref=e540] [cursor=pointer]:
+                - /url: "#projects"
+            - listitem [ref=e541]:
+              - link "Experience" [ref=e542] [cursor=pointer]:
+                - /url: "#experience"
+            - listitem [ref=e543]:
+              - link "Resume" [ref=e544] [cursor=pointer]:
+                - /url: /resume.pdf
+                - text: Resume
+                - img [ref=e545]
+        - generic [ref=e549]:
+          - heading "Connect" [level=4] [ref=e550]
+          - generic [ref=e551]:
+            - link "GitHub" [ref=e552] [cursor=pointer]:
+              - /url: https://github.com/angus
+              - img [ref=e553]
+            - link "LinkedIn" [ref=e557] [cursor=pointer]:
+              - /url: https://linkedin.com/in/angus-engineer
+              - img [ref=e558]
+            - link "Email" [ref=e564] [cursor=pointer]:
+              - /url: mailto:angus@engineering.dev
+              - img [ref=e565]
+      - generic [ref=e569]:
+        - paragraph [ref=e570]: © 2026 Angus. All rights reserved.
+        - paragraph [ref=e571]: Crafted with precision. Engineered for performance.

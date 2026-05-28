@@ -1,0 +1,350 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "Angus" [ref=e6] [cursor=pointer]:
+        - /url: "#home"
+      - generic [ref=e7]:
+        - link "Home" [ref=e8] [cursor=pointer]:
+          - /url: "#home"
+        - link "About" [ref=e9] [cursor=pointer]:
+          - /url: "#about"
+        - link "Projects" [ref=e10] [cursor=pointer]:
+          - /url: "#projects"
+        - link "Experience" [ref=e11] [cursor=pointer]:
+          - /url: "#experience"
+        - link "Contact" [ref=e12] [cursor=pointer]:
+          - /url: "#contact"
+      - link "Get in touch" [ref=e13] [cursor=pointer]:
+        - /url: "#contact"
+  - main [ref=e14]:
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - generic [ref=e20]: Welcome
+          - heading "Building intelligent systems with engineering precision" [level=1] [ref=e21]:
+            - generic [ref=e22]: Building intelligent
+            - generic [ref=e23]: systems with
+            - generic [ref=e24]: engineering precision
+        - paragraph [ref=e25]: Final-year Computer Science student at HKU. Building scalable Spring Boot backends, React frontends, and end-to-end ML pipelines. Passionate about clean, impactful engineering that ships.
+        - generic [ref=e26]:
+          - link "View Projects" [ref=e27] [cursor=pointer]:
+            - /url: "#projects"
+            - text: View Projects
+            - img [ref=e28]
+          - link "Get in Touch" [ref=e30] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=e31]:
+          - generic [ref=e32]:
+            - generic [ref=e33]: 3+
+            - generic [ref=e34]: Projects
+          - generic [ref=e35]:
+            - generic [ref=e36]: 1y
+            - generic [ref=e37]: Experience
+          - generic [ref=e38]:
+            - generic [ref=e39]: 10+
+            - generic [ref=e40]: Technologies
+      - generic [ref=e44]:
+        - generic [ref=e50]: Controller.java
+        - generic [ref=e52]:
+          - generic [ref=e53]:
+            - generic [ref=e54]: "1"
+            - generic [ref=e55]: "2"
+            - generic [ref=e56]: "3"
+            - generic [ref=e57]: "4"
+            - generic [ref=e58]: "5"
+            - generic [ref=e59]: "6"
+            - generic [ref=e60]: "7"
+            - generic [ref=e61]: "8"
+            - generic [ref=e62]: "9"
+            - generic [ref=e63]: "10"
+          - generic [ref=e64]:
+            - generic [ref=e66]: "@RestController"
+            - generic [ref=e68]: "@RequestMapping(\"/api/v1\")"
+            - generic [ref=e69]: "public class FinanceController {"
+            - generic [ref=e70]: "@PostMapping(\"/transactions\")"
+            - generic [ref=e71]: public Response create(
+            - generic [ref=e72]: "@RequestBody Transaction tx) {"
+            - generic [ref=e73]: return service.process(tx);
+            - generic [ref=e74]: "}"
+            - generic [ref=e75]: "}"
+        - generic [ref=e77]: hover to explore
+    - generic [ref=e80]:
+      - generic [ref=e81]:
+        - text: About Me
+        - heading "Who I Am" [level=2] [ref=e82]
+      - generic [ref=e83]:
+        - generic [ref=e84]:
+          - generic [ref=e85]:
+            - heading "What I Build" [level=3] [ref=e86]
+            - paragraph [ref=e87]: I'm a final-year Computer Science student at HKU specializing in scalable Spring Boot backends, React frontends, and ML model deployment. I've shipped production-ready features serving South Asian eHealth communities and built end-to-end OCR pipelines processing thousands of receipts weekly.
+          - generic [ref=e88]:
+            - heading "How I Think" [level=3] [ref=e89]
+            - paragraph [ref=e90]: I approach engineering as a craft — building things that work, shipping fast, and iterating with purpose. Every project is an opportunity to learn deeper fundamentals and deliver real value. I believe production code that serves real users teaches more than theory ever can.
+          - generic [ref=e91]:
+            - heading "Engineering Philosophy" [level=3] [ref=e92]
+            - list [ref=e93]:
+              - listitem [ref=e94]:
+                - generic [ref=e95]: →
+                - generic [ref=e96]: Ship production code that serves real users
+              - listitem [ref=e97]:
+                - generic [ref=e98]: →
+                - generic [ref=e99]: Master fundamentals before chasing patterns
+              - listitem [ref=e100]:
+                - generic [ref=e101]: →
+                - generic [ref=e102]: Build end-to-end — own the full stack
+              - listitem [ref=e103]:
+                - generic [ref=e104]: →
+                - generic [ref=e105]: Optimize for iteration speed without cutting corners
+              - listitem [ref=e106]:
+                - generic [ref=e107]: →
+                - generic [ref=e108]: Learn by building, not just reading
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - img [ref=e112]
+            - heading "Scalable Architecture" [level=4] [ref=e116]
+            - paragraph [ref=e117]: Designing systems that grow efficiently with demand and complexity.
+          - generic [ref=e118]:
+            - img [ref=e120]
+            - heading "AI Systems" [level=4] [ref=e128]
+            - paragraph [ref=e129]: Building intelligent systems that leverage machine learning at scale.
+          - generic [ref=e130]:
+            - img [ref=e132]
+            - heading "High Performance" [level=4] [ref=e134]
+            - paragraph [ref=e135]: Optimizing systems for speed, efficiency, and reliability.
+          - generic [ref=e136]:
+            - img [ref=e138]
+            - heading "Data Technologies" [level=4] [ref=e142]
+            - paragraph [ref=e143]: Working with large-scale data processing and real-time analytics.
+      - generic [ref=e144]:
+        - heading "Core Technologies" [level=3] [ref=e145]
+        - generic [ref=e146]:
+          - generic [ref=e147]: Python
+          - generic [ref=e148]: Java
+          - generic [ref=e149]: TypeScript
+          - generic [ref=e150]: C++
+          - generic [ref=e151]: Spring Boot
+          - generic [ref=e152]: React.js
+          - generic [ref=e153]: Django
+          - generic [ref=e154]: Streamlit
+          - generic [ref=e155]: TensorFlow
+          - generic [ref=e156]: PyTorch
+          - generic [ref=e157]: SQL
+          - generic [ref=e158]: GitHub Actions
+          - generic [ref=e159]: REST APIs
+          - generic [ref=e160]: CI/CD
+          - generic [ref=e161]: Linux
+          - generic [ref=e162]: OOP & Design Patterns
+    - generic [ref=e165]:
+      - generic [ref=e166]:
+        - text: Portfolio
+        - heading "Featured Projects" [level=2] [ref=e167]
+        - paragraph [ref=e168]: A selection of projects showcasing my approach to building scalable, high-performance systems.
+      - generic [ref=e169]:
+        - generic [ref=e172]:
+          - generic [ref=e173]:
+            - generic [ref=e174]:
+              - heading "Spendify – Personal Finance Tracker" [level=3] [ref=e175]
+              - paragraph [ref=e176]: Spring Boot RESTful API with OCR receipt processing and CI/CD pipeline
+            - paragraph [ref=e177]: Architected a Spring Boot RESTful API backend with layered architecture (Controller/Service/Repository) and CI/CD pipeline via GitHub Actions deploying to production on every merge to main. Implemented 7+ RESTful endpoints with JWT-based authentication and Microsoft SQL Server for secure financial data storage.
+            - paragraph [ref=e179]: OCR pipeline reduces manual expense entry time by 80% for active beta users
+            - generic [ref=e180]:
+              - generic [ref=e181]: Spring Boot
+              - generic [ref=e182]: Java
+              - generic [ref=e183]: Microsoft SQL Server
+              - generic [ref=e184]: JWT
+              - generic [ref=e185]: GitHub Actions
+              - generic [ref=e186]: Tesseract OCR
+            - link "GitHub" [ref=e188] [cursor=pointer]:
+              - /url: https://github.com/hoyin99999/spendify
+              - img [ref=e189]
+              - generic [ref=e193]: GitHub
+          - generic [ref=e195]:
+            - generic [ref=e196]: "1"
+            - paragraph [ref=e197]: Featured Project
+        - generic [ref=e200]:
+          - generic [ref=e201]:
+            - generic [ref=e202]:
+              - heading "Money Detector" [level=3] [ref=e203]
+              - paragraph [ref=e204]: On-device Android banknote denomination classifier using TensorFlow Lite
+            - paragraph [ref=e205]: Built an Android banknote denomination classifier in Java using TensorFlow Lite, processing images directly on-device with no server dependency. Trained a CNN model via Teachable Machine on 500+ banknote images across 8 denomination classes, achieving 70% accuracy on variable-quality captures.
+            - paragraph [ref=e207]: 70% accuracy on variable-quality captures, outperforming naive baseline by 30pp
+            - generic [ref=e208]:
+              - generic [ref=e209]: Java
+              - generic [ref=e210]: TensorFlow Lite
+              - generic [ref=e211]: Android
+              - generic [ref=e212]: Teachable Machine
+              - generic [ref=e213]: CNN
+            - link "GitHub" [ref=e215] [cursor=pointer]:
+              - /url: https://github.com/hoyin99999/money-detector
+              - img [ref=e216]
+              - generic [ref=e220]: GitHub
+          - generic [ref=e222]:
+            - generic [ref=e223]: "2"
+            - paragraph [ref=e224]: Featured Project
+        - generic [ref=e227]:
+          - generic [ref=e228]:
+            - generic [ref=e229]:
+              - heading "Pose-Monitor" [level=3] [ref=e230]
+              - paragraph [ref=e231]: Real-time plank pose monitoring web app with MoveNet pose estimation
+            - paragraph [ref=e232]: Led a 4-person team to build a real-time plank pose monitoring web app in Python and Streamlit with pre-trained MoveNet Lightning pose estimation. Trained a TensorFlow custom classifier on joint position data to distinguish standard plank poses from incorrect form, deployed with 80% classification accuracy and 200ms average inference latency.
+            - paragraph [ref=e234]: 80% pose classification accuracy with 200ms inference latency for real-time feedback
+            - generic [ref=e235]:
+              - generic [ref=e236]: Python
+              - generic [ref=e237]: Streamlit
+              - generic [ref=e238]: TensorFlow
+              - generic [ref=e239]: MoveNet Lightning
+              - generic [ref=e240]: Pose Estimation
+            - link "GitHub" [ref=e242] [cursor=pointer]:
+              - /url: https://github.com/hoyin99999/pose-monitor
+              - img [ref=e243]
+              - generic [ref=e247]: GitHub
+          - generic [ref=e249]:
+            - generic [ref=e250]: "3"
+            - paragraph [ref=e251]: Featured Project
+    - generic [ref=e254]:
+      - generic [ref=e255]:
+        - text: Career
+        - heading "Experience & Education" [level=2] [ref=e256]
+      - generic [ref=e258]:
+        - heading "Work Experience" [level=3] [ref=e259]
+        - generic [ref=e264]:
+          - generic [ref=e265]:
+            - heading "Software Engineer Intern" [level=3] [ref=e266]
+            - generic [ref=e267]: May 2025 — Aug 2025
+          - paragraph [ref=e268]: PORTALVISION Limited
+          - paragraph [ref=e269]: Built and shipped production-ready features for South Asian eHealth communities. Delivered multilingual UI/UX and full-stack backend integrations on weekly sprints.
+          - list [ref=e270]:
+            - listitem [ref=e271]:
+              - img [ref=e272]
+              - generic [ref=e275]: Built multilingual i18n module for React.js eHealth app serving South Asian communities; shipped UI/UX in 4 languages (English, Hindi, Urdu, Nepali)
+            - listitem [ref=e276]:
+              - img [ref=e277]
+              - generic [ref=e280]: Developed full-stack Spring Boot backend for iSocial non-profit management system, integrating SQL database and Jaspersoft reporting to serve NGO caseworkers
+            - listitem [ref=e281]:
+              - img [ref=e282]
+              - generic [ref=e285]: Owned end-to-end feature delivery across React.js frontend and Spring Boot backend; resolved client-reported bugs and shipped UX improvements on weekly sprints
+          - generic [ref=e286]:
+            - generic [ref=e287]: React.js
+            - generic [ref=e288]: Spring Boot
+            - generic [ref=e289]: SQL
+            - generic [ref=e290]: Jaspersoft
+            - generic [ref=e291]: Java
+      - generic [ref=e293]:
+        - heading "Education" [level=3] [ref=e294]
+        - generic [ref=e295]:
+          - generic [ref=e299]:
+            - generic [ref=e300]:
+              - heading "Bachelor of Engineering in Computer Science" [level=3] [ref=e301]
+              - generic [ref=e302]: Sep 2024 — Present
+            - paragraph [ref=e303]: The University of Hong Kong
+            - paragraph [ref=e304]: Final-year Computer Science student building strong foundations in algorithms, data structures, and software engineering principles.
+            - list [ref=e305]:
+              - listitem [ref=e306]:
+                - img [ref=e307]
+                - generic [ref=e310]: Specializing in scalable backends, React frontends, and ML model deployment
+              - listitem [ref=e311]:
+                - img [ref=e312]
+                - generic [ref=e315]: Building production-grade projects with Spring Boot, React, and TensorFlow
+          - generic [ref=e318]:
+            - generic [ref=e319]:
+              - heading "Associate of Engineering in Computer Science" [level=3] [ref=e320]
+              - generic [ref=e321]: Sep 2022 — Aug 2024
+            - paragraph [ref=e322]: HKU School of Professional and Continuing Education
+            - paragraph [ref=e323]: Completed associate degree with distinction, achieving strong academic performance in computer science fundamentals.
+            - list [ref=e324]:
+              - listitem [ref=e325]:
+                - img [ref=e326]
+                - generic [ref=e329]: "GPA: 3.72/4.0"
+              - listitem [ref=e330]:
+                - img [ref=e331]
+                - generic [ref=e334]: Distinction classification
+              - listitem [ref=e335]:
+                - img [ref=e336]
+                - generic [ref=e339]: Principal's Honours List (2023, 2024)
+            - generic [ref=e340]:
+              - generic [ref=e341]: Python
+              - generic [ref=e342]: Java
+              - generic [ref=e343]: C++
+              - generic [ref=e344]: SQL
+      - generic [ref=e345]:
+        - generic [ref=e346]:
+          - generic [ref=e347]: 8+
+          - generic [ref=e348]: Years Experience
+        - generic [ref=e349]:
+          - generic [ref=e350]: "3"
+          - generic [ref=e351]: Companies
+        - generic [ref=e352]:
+          - generic [ref=e353]: 20+
+          - generic [ref=e354]: Projects Led
+        - generic [ref=e355]:
+          - generic [ref=e356]: 15+
+          - generic [ref=e357]: Team Members Mentored
+    - generic [ref=e360]:
+      - generic [ref=e361]:
+        - text: Get In Touch
+        - heading "Let's Work Together" [level=2] [ref=e362]
+        - paragraph [ref=e363]: I'm always interested in hearing about new projects and opportunities. Feel free to reach out.
+      - link "Send me an email" [ref=e365] [cursor=pointer]:
+        - /url: mailto:Hoyin99999@gmail.com
+        - img [ref=e366]
+        - text: Send me an email
+      - generic [ref=e370]:
+        - paragraph [ref=e371]: "Or connect with me on:"
+        - generic [ref=e372]:
+          - link "GitHub" [ref=e373] [cursor=pointer]:
+            - /url: https://github.com/hoyin99999
+            - img [ref=e374]
+            - generic [ref=e378]: GitHub
+          - link "LinkedIn" [ref=e379] [cursor=pointer]:
+            - /url: https://linkedin.com/in/li-ho-yin
+            - img [ref=e380]
+            - generic [ref=e386]: LinkedIn
+          - link "Email" [ref=e387] [cursor=pointer]:
+            - /url: mailto:Hoyin99999@gmail.com
+            - img [ref=e388]
+            - generic [ref=e391]: Email
+      - generic [ref=e392]:
+        - paragraph [ref=e393]: Download my resume to learn more about my background and experience.
+        - link "Download Resume" [ref=e394] [cursor=pointer]:
+          - /url: /resume.pdf
+          - img [ref=e395]
+          - text: Download Resume
+      - paragraph [ref=e399]: Built with React, Framer Motion, and Tailwind CSS. Optimized for performance and accessibility.
+  - contentinfo [ref=e400]:
+    - generic [ref=e401]:
+      - generic [ref=e402]:
+        - generic [ref=e403]:
+          - heading "Angus" [level=3] [ref=e404]
+          - paragraph [ref=e405]: Software Engineer building high-performance systems and scalable applications.
+        - generic [ref=e406]:
+          - heading "Quick Links" [level=4] [ref=e407]
+          - list [ref=e408]:
+            - listitem [ref=e409]:
+              - link "About" [ref=e410] [cursor=pointer]:
+                - /url: "#about"
+            - listitem [ref=e411]:
+              - link "Projects" [ref=e412] [cursor=pointer]:
+                - /url: "#projects"
+            - listitem [ref=e413]:
+              - link "Experience" [ref=e414] [cursor=pointer]:
+                - /url: "#experience"
+            - listitem [ref=e415]:
+              - link "Resume" [ref=e416] [cursor=pointer]:
+                - /url: /resume.pdf
+                - text: Resume
+                - img [ref=e417]
+        - generic [ref=e421]:
+          - heading "Connect" [level=4] [ref=e422]
+          - generic [ref=e423]:
+            - link "GitHub" [ref=e424] [cursor=pointer]:
+              - /url: https://github.com/angus
+              - img [ref=e425]
+            - link "LinkedIn" [ref=e429] [cursor=pointer]:
+              - /url: https://linkedin.com/in/angus-engineer
+              - img [ref=e430]
+            - link "Email" [ref=e436] [cursor=pointer]:
+              - /url: mailto:angus@engineering.dev
+              - img [ref=e437]
+      - generic [ref=e441]:
+        - paragraph [ref=e442]: © 2026 Angus. All rights reserved.
+        - paragraph [ref=e443]: Crafted with precision. Engineered for performance.

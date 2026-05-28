@@ -1,0 +1,162 @@
+{
+  "nav": {
+    "home": "首頁",
+    "about": "關於",
+    "projects": "項目",
+    "experience": "經歷",
+    "contact": "聯絡",
+    "getInTouch": "聯絡我"
+  },
+  "hero": {
+    "welcome": "歡迎",
+    "headline1": "以工程精準度",
+    "headline2": "構建",
+    "headline3": "智能系統",
+    "description": "香港大學計算機科學四年級學生。擅長構建可擴展的 Spring Boot 後端、React 前端及端到端機器學習管道。熱衷於打造能真正落地、具影響力的精良工程。",
+    "viewProjects": "瀏覽項目",
+    "getInTouch": "聯絡我",
+    "stats": {
+      "projects": { "value": "3+", "label": "項目" },
+      "experience": { "value": "1年", "label": "經驗" },
+      "technologies": { "value": "10+", "label": "技術" }
+    }
+  },
+  "about": {
+    "header": "關於我",
+    "title": "我是誰",
+    "whatIBuild": {
+      "title": "我所構建",
+      "content": "我是香港大學計算機科學四年級學生，專注於可擴展的 Spring Boot 後端、React 前端及機器學習模型部署。我曾開發服務南亞電子健康社群的生產級功能，並構建了每週處理數千張收據的端到端 OCR 管道。"
+    },
+    "howIThink": {
+      "title": "我的思維方式",
+      "content": "我將工程視為一門手藝——構建有效的產品、快速交付、有目的地迭代。每個項目都是深入學習基礎知識和創造真實價值的機會。我相信服務真實用戶的生產代碼比純粹的理論能教會你更多。"
+    },
+    "philosophy": {
+      "title": "工程理念",
+      "items": [
+        "交付服務真實用戶的生產代碼",
+        "掌握基礎，而非盲目追求模式",
+        "端到端構建——掌握全棧",
+        "在不妥協品質的前提下優化迭代速度",
+        "在實踐中學習，而非僅靠閱讀"
+      ]
+    },
+    "interests": [
+      { "title": "可擴展架構", "description": "設計能隨著需求與複雜性高效增長的系統。" },
+      { "title": "人工智能系統", "description": "構建大規模應用機器學習的智能系統。" },
+      { "title": "高性能計算", "description": "優化系統以提升速度、效率與可靠性。" },
+      { "title": "數據技術", "description": "處理大規模數據分析與實時數據管道。" }
+    ],
+    "techStack": "核心技術"
+  },
+  "projects": {
+    "header": "作品集",
+    "title": "重點項目",
+    "description": "精選項目展示我構建可擴展、高性能系統的方法。",
+    "featuredLabel": "重點項目",
+    "otherProjects": "其他項目",
+    "github": "GitHub",
+    "liveDemo": "在線演示",
+    "data": {
+      "spendify": {
+        "title": "Spendify – 個人理財追蹤器",
+        "description": "採用 Spring Boot 的 RESTful API，配備 OCR 收據處理與 CI/CD 管道",
+        "longDescription": "以分層架構（Controller/Service/Repository）設計 Spring Boot RESTful API 後端，並透過 GitHub Actions 建立 CI/CD 管道，每次合併到主分支即自動部署至生產環境。實現了 7 個以上的 RESTful 端點，採用 JWT 認證及 Microsoft SQL Server 確保金融數據安全儲存。",
+        "impact": "OCR 管道為活躍測試用戶減少 80% 的手動開支輸入時間"
+      },
+      "money-detector": {
+        "title": "貨幣識別器",
+        "description": "基於 TensorFlow Lite 的 Android 設備端紙幣面額分類器",
+        "longDescription": "使用 Java 和 TensorFlow Lite 構建 Android 紙幣面額分類器，直接在設備端處理圖像，無需伺服器依賴。透過 Teachable Machine 訓練 CNN 模型，使用 500+ 張涵蓋 8 個面額類別的紙幣圖像，在品質不一的拍攝條件下達到 70% 準確率。",
+        "impact": "在品質不一的圖像上達到 70% 準確率，比基準線高出 30 個百分點"
+      },
+      "pose-monitor": {
+        "title": "姿勢監測器",
+        "description": "使用 MoveNet 姿勢估計的實時平板支撐監測網頁應用",
+        "longDescription": "帶領 4 人團隊使用 Python 和 Streamlit 構建實時平板支撐姿勢監測網頁應用，採用預訓練的 MoveNet Lightning 姿勢估計模型。基於關節位置數據訓練 TensorFlow 自定義分類器，區分標準平板支撐與錯誤姿勢，部署後達到 80% 分類準確率及 200ms 平均推理延遲。",
+        "impact": "80% 姿勢分類準確率，200ms 推理延遲，實現實時反饋"
+      }
+    }
+  },
+  "experience": {
+    "header": "職業歷程",
+    "title": "經歷與學歷",
+    "work": "工作經歷",
+    "education": "教育背景",
+    "stats": [
+      { "value": "8+", "label": "年經驗" },
+      { "value": "3", "label": "間公司" },
+      { "value": "20+", "label": "個項目" },
+      { "value": "15+", "label": "名團隊成員指導" }
+    ],
+    "data": {
+      "portalvision-intern": {
+        "title": "軟件工程實習生",
+        "organization": "PORTALVISION Limited",
+        "description": "為南亞電子健康社群構建並交付生產級功能。每週衝刺交付多語言用戶界面及全棧後端集成。",
+        "highlights": [
+          "為服務南亞社群的 React.js 電子健康應用構建多語言 i18n 模塊，以 4 種語言（英語、印地語、烏爾都語、尼泊爾語）交付用戶界面",
+          "為 iSocial 非營利管理系統開發全棧 Spring Boot 後端，集成 SQL 數據庫及 Jaspersoft 報表，服務 NGO 個案工作者",
+          "主導 React.js 前端與 Spring Boot 後端的端到端功能交付；修復客戶報告的錯誤並在每週衝刺中交付用戶體驗改進"
+        ]
+      },
+      "hku-beng": {
+        "title": "計算機科學工學學士",
+        "organization": "香港大學",
+        "description": "四年級計算機科學學生，在算法、數據結構及軟件工程原理方面打下堅實基礎。",
+        "highlights": [
+          "專注於可擴展後端、React 前端及機器學習模型部署",
+          "使用 Spring Boot、React 及 TensorFlow 構建生產級項目"
+        ],
+        "date": { "start": "2024年9月", "end": "至今" }
+      },
+      "hku-space-associate": {
+        "title": "計算機科學工程學副學士",
+        "organization": "香港大學專業進修學院",
+        "description": "以優異成績完成副學士課程，在計算機科學基礎領域取得優異學術表現。",
+        "highlights": [
+          "GPA：3.72/4.0",
+          "榮譽等級",
+          "院長榮譽名單（2023、2024）"
+        ],
+        "date": { "start": "2022年9月", "end": "2024年8月" }
+      }
+    }
+  },
+  "contact": {
+    "header": "聯絡我",
+    "title": "讓我們一起合作",
+    "description": "我樂於了解新的項目和機會，歡迎隨時與我聯繫。",
+    "cta": "發送電郵",
+    "orConnect": "或透過以下方式聯繫我：",
+    "resume": {
+      "title": "下載我的履歷，了解更多關於我的背景和經驗。",
+      "cta": "下載履歷"
+    },
+    "footer": "使用 React、Framer Motion 和 Tailwind CSS 構建。針對性能與無障礙體驗進行優化。",
+    "social": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "email": "電郵"
+    }
+  },
+  "footer": {
+    "brand": "李浩然",
+    "tagline": "專注構建高性能系統與可擴展應用的軟件工程師。",
+    "quickLinks": "快速連結",
+    "links": {
+      "about": "關於",
+      "projects": "項目",
+      "experience": "經歷",
+      "resume": "履歷"
+    },
+    "connect": "社交媒體",
+    "copyright": "版權所有。",
+    "crafted": "精準構建。性能驅動。"
+  },
+  "codeWindow": {
+    "hoverHint": "懸停探索",
+    "clickHint": "• 點擊切換"
+  }
+}
