@@ -1,5 +1,6 @@
 import { motion, AnimatePresence, type Variants } from 'framer-motion'
 import { useState, useEffect, useCallback } from 'react'
+import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
 import { Menu, X } from 'lucide-react'
 import LanguageSwitcher from '../ui/LanguageSwitcher'
@@ -38,6 +39,40 @@ export default function Navbar() {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // Track active section on scroll using Intersection Observer
+  useEffect(() => {
+    const sectionIds = ['home', 'about', 'projects', 'experience', 'contact']
+    const observers = new Map()
+
+    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const sectionId = entry.target.id
+          setActiveLink(sectionId)
+        }
+      })
+    }
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '-50% 0px -50% 0px', // Trigger when section is centered in viewport
+      threshold: 0,
+    }
+
+    sectionIds.forEach((id) => {
+      const element = document.getElementById(id)
+      if (element) {
+        const observer = new IntersectionObserver(handleIntersection, observerOptions)
+        observer.observe(element)
+        observers.set(id, observer)
+      }
+    })
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect())
+    }
   }, [])
 
   // Prevent body scroll when mobile menu is open
@@ -134,21 +169,21 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu drawer */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
+      {/* Mobile menu drawer - rendered via portal outside navbar */}
+      {isMobileMenuOpen && createPortal(
+        <AnimatePresence>
           <>
-            {/* Backdrop */}
-            <motion.div
-              key="mobile-backdrop"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/50 md:hidden"
-              onClick={closeMenu}
-              aria-hidden="true"
-            />
+             {/* Backdrop */}
+             <motion.div
+               key="mobile-backdrop"
+               initial={{ opacity: 0 }}
+               animate={{ opacity: 1 }}
+               exit={{ opacity: 0 }}
+               transition={{ duration: 0.2 }}
+               className="fixed inset-0 bg-black/50 md:hidden z-40"
+               onClick={closeMenu}
+               aria-hidden="true"
+             />
 
             {/* Drawer */}
             <motion.div
@@ -157,10 +192,15 @@ export default function Navbar() {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="fixed top-0 right-0 bottom-0 w-72 bg-bg-primary bg-gradient-to-b from-accent/[0.03] via-bg-primary to-bg-primary border-l border-neutral-800/30 shadow-2xl md:hidden flex flex-col z-50"
+              className="fixed top-0 right-0 bottom-0 w-72 border-l border-l-accent/20 shadow-2xl md:hidden z-50"
+              style={{ backgroundColor: '#1F1F1F' }}
             >
-              {/* Drawer header */}
-              <div className="flex items-center justify-between px-6 py-4 border-b border-neutral-800/20">
+              {/* Inner container for scrollable content */}
+              <div className="flex flex-col h-full">
+              {/* Drawer header with accent bar */}
+              <div className="relative flex items-center justify-between px-6 py-4">
+                {/* Accent bar at top */}
+                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent to-accent/40" />
                 <span className="font-display font-bold text-lg text-text-primary">{t('nav.home')}</span>
                 <button
                   onClick={closeMenu}
@@ -204,10 +244,12 @@ export default function Navbar() {
                   {t('nav.getInTouch')}
                 </motion.a>
               </div>
+              </div>
             </motion.div>
           </>
-        )}
-      </AnimatePresence>
+        </AnimatePresence>,
+        document.body
+      )}
     </motion.nav>
   )
 }
