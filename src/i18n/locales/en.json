@@ -85,10 +85,10 @@
     "work": "Work Experience",
     "education": "Education",
     "stats": [
-      { "value": "8+", "label": "Years Experience" },
+      { "value": "1+", "label": "Years Experience" },
       { "value": "1", "label": "Companies" },
-      { "value": "20+", "label": "Projects Led" },
-      { "value": "15+", "label": "Team Members Mentored" }
+      { "value": "10+", "label": "Projects Led" },
+      { "value": "10+", "label": "Team Members Mentored" }
     ],
     "data": {
       "portalvision-intern": {

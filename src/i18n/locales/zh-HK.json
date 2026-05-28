@@ -85,10 +85,10 @@
     "work": "工作經歷",
     "education": "教育背景",
     "stats": [
-      { "value": "8+", "label": "年經驗" },
+      { "value": "1+", "label": "年經驗" },
       { "value": "1", "label": "間曾經就任公司" },
-      { "value": "20+", "label": "個項目" },
-      { "value": "15+", "label": "名團隊成員指導" }
+      { "value": "10+", "label": "個項目" },
+      { "value": "10+", "label": "名團隊成員指導" }
     ],
     "data": {
       "portalvision-intern": {
