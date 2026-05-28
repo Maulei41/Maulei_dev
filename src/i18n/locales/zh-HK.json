@@ -86,7 +86,7 @@
     "education": "教育背景",
     "stats": [
       { "value": "8+", "label": "年經驗" },
-      { "value": "3", "label": "間公司" },
+      { "value": "1", "label": "間曾經就任公司" },
       { "value": "20+", "label": "個項目" },
       { "value": "15+", "label": "名團隊成員指導" }
     ],

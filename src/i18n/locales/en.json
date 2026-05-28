@@ -86,7 +86,7 @@
     "education": "Education",
     "stats": [
       { "value": "8+", "label": "Years Experience" },
-      { "value": "3", "label": "Companies" },
+      { "value": "1", "label": "Companies" },
       { "value": "20+", "label": "Projects Led" },
       { "value": "15+", "label": "Team Members Mentored" }
     ],
