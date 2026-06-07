@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { containerVariants, itemVariants } from '../animations/variants'
 import Container from '../components/layout/Container'
 import { contact } from '../data/contact'
-import { Code2 as GithubIcon, Share2 as LinkedinIcon, Mail, Download } from 'lucide-react'
+import { GithubLogo, LinkedinLogo, Envelope, DownloadSimple } from '@phosphor-icons/react'
 import { useRef, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -22,21 +22,21 @@ export default function Contact() {
       name: t('contact.social.github'),
       socialKey: 'github',
       url: contact.github,
-      icon: GithubIcon,
-      label: 'github.com/angus',
+      icon: GithubLogo,
+      label: 'github.com/hoyin99999',
     },
     {
       name: t('contact.social.linkedin'),
       socialKey: 'linkedin',
       url: contact.linkedin,
-      icon: LinkedinIcon,
-      label: 'linkedin.com/in/angus-engineer',
+      icon: LinkedinLogo,
+      label: 'linkedin.com/in/ho-yin-li-527156336/',
     },
     {
       name: t('contact.social.email'),
       socialKey: 'email',
       url: `mailto:${contact.email}`,
-      icon: Mail,
+      icon: Envelope,
       label: contact.email,
     },
   ]
@@ -53,7 +53,7 @@ export default function Contact() {
         >
           {/* Header */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <span className="text-accent text-sm font-mono tracking-widest uppercase">
+            <span className="text-accent text-sm font-mono tracking-wide">
               {t('contact.header')}
             </span>
             <h2 className="font-display font-bold text-4xl lg:text-5xl text-text-primary">
@@ -68,11 +68,11 @@ export default function Contact() {
           <motion.div variants={itemVariants} className="space-y-6 py-12">
             <motion.a
               href={`mailto:${contact.email}`}
-              whileHover={{ scale: 1.05, boxShadow: '0 0 32px rgba(0, 255, 149, 0.3)' }}
+              whileHover={{ scale: 1.05, boxShadow: '0 0 32px rgba(0, 204, 122, 0.3)' }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-3 px-8 sm:px-12 py-4 bg-accent text-bg-primary font-semibold rounded-lg text-lg hover:bg-accent-light transition-colors"
             >
-              <Mail size={24} />
+              <Envelope size={24} />
               {t('contact.cta')}
             </motion.a>
           </motion.div>
@@ -112,11 +112,11 @@ export default function Contact() {
             <motion.a
               href={contact.resume}
               download
-              whileHover={{ scale: 1.05, boxShadow: '0 0 24px rgba(0, 255, 149, 0.2)' }}
+              whileHover={{ scale: 1.05, boxShadow: '0 0 24px rgba(0, 204, 122, 0.2)' }}
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 px-8 py-3 border border-neutral-700 text-text-primary hover:border-accent hover:text-accent font-semibold rounded-lg transition-all"
             >
-              <Download size={20} />
+              <DownloadSimple size={20} />
               {t('contact.resume.cta')}
             </motion.a>
           </motion.div>

@@ -9,7 +9,7 @@
   body {
     background-color: #0A0A0A;
     color: #FFFFFF;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Outfit', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     cursor: none;
@@ -22,47 +22,49 @@
   /* Typography */
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Space Grotesk', system-ui, sans-serif;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
   }
 
   h1 {
     font-size: 3rem;
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.05;
+    letter-spacing: -0.04em;
   }
 
   h2 {
     font-size: 2.25rem;
     font-weight: 700;
+    letter-spacing: -0.03em;
   }
 
   h3 {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
   }
 
   @media (min-width: 1024px) {
-    h1 { font-size: 4.5rem; }
-    h2 { font-size: 3rem; }
+    h1 { font-size: 5rem; }
+    h2 { font-size: 3.25rem; }
   }
 
   /* Selection */
   ::selection {
-    background-color: rgba(0, 255, 149, 0.3);
+    background-color: rgba(0, 204, 122, 0.3);
     color: #FFFFFF;
   }
 
   /* Focus states for accessibility */
   :focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px #00FF95;
+    box-shadow: 0 0 0 2px #00CC7A;
     border-radius: 8px;
   }
 
   a:focus-visible,
   button:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px #00FF95;
+    box-shadow: 0 0 0 2px #00CC7A;
     border-radius: 8px;
   }
 
@@ -73,12 +75,13 @@
 }
 
 @layer components {
-  /* Glass effect variants */
+  /* Glass effect variants — with inner border for edge refraction */
   .glass {
     background-color: rgba(10, 10, 10, 0.2);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
     border-radius: 12px;
   }
 
@@ -86,7 +89,7 @@
     background-color: rgba(10, 10, 10, 0.1);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.04);
     border-radius: 8px;
   }
 
@@ -94,33 +97,34 @@
     background-color: rgba(10, 10, 10, 0.3);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
     border-radius: 16px;
   }
 
   /* Gradient text */
   .text-gradient {
-    background: linear-gradient(to right, #00FF95, #33FFB2);
+    background: linear-gradient(to right, #00CC7A, #33D699);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  /* Glow effects */
-  .glow-emerald {
-    box-shadow: 0 0 16px rgba(0, 255, 149, 0.15);
+  /* Glow effects with desaturated accent */
+  .glow-accent {
+    box-shadow: 0 0 16px rgba(0, 204, 122, 0.15);
   }
 
-  .glow-emerald-lg {
-    box-shadow: 0 0 24px rgba(0, 255, 149, 0.2);
+  .glow-accent-lg {
+    box-shadow: 0 0 24px rgba(0, 204, 122, 0.2);
   }
 
-  .glow-emerald-hover {
+  .glow-accent-hover {
     transition: box-shadow 0.3s ease;
   }
 
-  .glow-emerald-hover:hover {
-    box-shadow: 0 0 24px rgba(0, 255, 149, 0.2);
+  .glow-accent-hover:hover {
+    box-shadow: 0 0 24px rgba(0, 204, 122, 0.2);
   }
 
   /* Container utilities */
@@ -170,7 +174,7 @@
   }
 
   .btn-base:focus-visible {
-    box-shadow: 0 0 0 2px #00FF95;
+    box-shadow: 0 0 0 2px #00CC7A;
   }
 
   .btn-primary {
@@ -178,16 +182,16 @@
     border-radius: 8px;
     font-weight: 600;
     transition: all 0.3s ease;
-    background-color: #00FF95;
+    background-color: #00CC7A;
     color: #0A0A0A;
   }
 
   .btn-primary:hover {
-    background-color: #33FFB2;
+    background-color: #33D699;
   }
 
   .btn-primary:focus-visible {
-    box-shadow: 0 0 0 2px #00FF95;
+    box-shadow: 0 0 0 2px #00CC7A;
   }
 
   .btn-secondary {
@@ -200,23 +204,23 @@
   }
 
   .btn-secondary:hover {
-    border-color: #00FF95;
-    color: #00FF95;
+    border-color: #00CC7A;
+    color: #00CC7A;
   }
 
   .btn-secondary:focus-visible {
-    box-shadow: 0 0 0 2px #00FF95;
+    box-shadow: 0 0 0 2px #00CC7A;
   }
 
   /* Link utilities */
   .link-primary {
-    color: #00FF95;
+    color: #00CC7A;
     cursor: pointer;
     transition: color 0.2s ease;
   }
 
   .link-primary:hover {
-    color: #33FFB2;
+    color: #33D699;
   }
 
   .link-secondary {
@@ -229,14 +233,15 @@
     color: #FFFFFF;
   }
 
-  /* Badge */
+  /* Badge — subtle inline label (not pill-shaped) */
   .badge {
-    padding: 0.25rem 0.75rem;
-    font-size: 0.75rem;
-    border-radius: 9999px;
-    background-color: rgba(0, 255, 149, 0.1);
-    color: #00FF95;
-    border: 1px solid rgba(0, 255, 149, 0.3);
+    padding: 0.1875rem 0.5rem;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    border-radius: 4px;
+    background-color: rgba(0, 204, 122, 0.08);
+    color: #00CC7A;
+    border: 1px solid rgba(0, 204, 122, 0.2);
   }
 
   /* Divider */
@@ -248,7 +253,7 @@
 @layer utilities {
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
@@ -256,17 +261,49 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #374151;
+    background-color: #2A2A2A;
     border-radius: 9999px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background-color: #4B5563;
+    background-color: #3A3A3A;
   }
 
   /* Prevent layout shift */
   html {
     scroll-padding-top: 80px;
+  }
+
+  /* Grain overlay texture — subtle noise to break flatness */
+  .grain-overlay::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9998;
+    pointer-events: none;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-size: 256px 256px;
+  }
+
+  /* Skip-to-content link (visually hidden until focused) */
+  .skip-to-content {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    padding: 0.75rem 1.5rem;
+    background-color: #00CC7A;
+    color: #0A0A0A;
+    font-weight: 600;
+    border-radius: 0 0 8px 8px;
+    transition: top 0.2s ease;
+  }
+
+  .skip-to-content:focus {
+    top: 0;
   }
 
   /* Accessibility: reduce motion */

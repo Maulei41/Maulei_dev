@@ -19,12 +19,12 @@ export default {
           secondary: '#A1A1AA',
           tertiary: '#71717A',
         },
-        // Accent - Emerald green
+        // Accent - Muted emerald green (desaturated from 100% to ~70%)
         accent: {
-          DEFAULT: '#00FF95',
-          light: '#33FFB2',
-          dark: '#00CC77',
-          glow: '#00FF95',
+          DEFAULT: '#00CC7A',
+          light: '#33D699',
+          dark: '#009E5F',
+          glow: '#00CC7A',
         },
         // Neutral grays for borders and accents
         neutral: {
@@ -42,9 +42,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Outfit', 'system-ui', 'sans-serif'],
         display: ['Space Grotesk', 'system-ui', 'sans-serif'],
-        mono: ['Fira Code', 'monospace'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
       fontSize: {
         // Typography scale
@@ -98,19 +98,19 @@ export default {
         '2xl': '24px',
       },
       boxShadow: {
-        // Subtle shadow system
-        sm: '0 1px 2px rgba(0, 0, 0, 0.05)',
-        base: '0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)',
-        md: '0 4px 6px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.06)',
-        lg: '0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05)',
-        xl: '0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04)',
-        '2xl': '0 25px 50px rgba(0, 0, 0, 0.15)',
-        inner: 'inset 0 2px 4px rgba(0, 0, 0, 0.05)',
-        // Glow effects with emerald accent
-        'glow-sm': '0 0 8px rgba(0, 255, 149, 0.1)',
-        'glow-md': '0 0 16px rgba(0, 255, 149, 0.15)',
-        'glow-lg': '0 0 24px rgba(0, 255, 149, 0.2)',
-        'glow-xl': '0 0 32px rgba(0, 255, 149, 0.25)',
+        // Tinted shadow system — shadows carry the bg hue instead of generic black
+        sm: '0 1px 2px rgba(0, 10, 5, 0.4)',
+        base: '0 1px 3px rgba(0, 10, 5, 0.5), 0 1px 2px rgba(0, 10, 5, 0.3)',
+        md: '0 4px 6px rgba(0, 10, 5, 0.5), 0 2px 4px rgba(0, 10, 5, 0.3)',
+        lg: '0 10px 15px rgba(0, 10, 5, 0.5), 0 4px 6px rgba(0, 10, 5, 0.25)',
+        xl: '0 20px 25px rgba(0, 10, 5, 0.5), 0 10px 10px rgba(0, 10, 5, 0.2)',
+        '2xl': '0 25px 50px rgba(0, 10, 5, 0.6)',
+        inner: 'inset 0 2px 4px rgba(0, 10, 5, 0.4)',
+        // Glow effects with desaturated accent
+        'glow-sm': '0 0 8px rgba(0, 204, 122, 0.1)',
+        'glow-md': '0 0 16px rgba(0, 204, 122, 0.15)',
+        'glow-lg': '0 0 24px rgba(0, 204, 122, 0.2)',
+        'glow-xl': '0 0 32px rgba(0, 204, 122, 0.25)',
         none: 'none',
       },
       borderRadius: {
@@ -189,6 +189,10 @@ export default {
         },
         '.text-gradient': {
           '@apply bg-gradient-to-r from-white via-white to-text-secondary bg-clip-text text-transparent':
+            {},
+        },
+        '.text-gradient-accent': {
+          '@apply bg-gradient-to-r from-accent via-accent-light to-accent-dark bg-clip-text text-transparent':
             {},
         },
       })

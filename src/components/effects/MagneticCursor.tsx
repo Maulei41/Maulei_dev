@@ -6,6 +6,14 @@ export default function MagneticCursor() {
   const [visible, setVisible] = useState(false)
   const [isPullActive, setIsPullActive] = useState(false)
 
+  // Always declare motion values and springs before any conditional return
+  // to comply with React's Rules of Hooks (same hooks every render).
+  const cursorX = useMotionValue(-100)
+  const cursorY = useMotionValue(-100)
+
+  const springX = useSpring(cursorX, { stiffness: 200, damping: 25 })
+  const springY = useSpring(cursorY, { stiffness: 200, damping: 25 })
+
   // Disable on touch devices (no fine pointer)
   useEffect(() => {
     const mq = window.matchMedia('(any-pointer: coarse)')
@@ -14,14 +22,6 @@ export default function MagneticCursor() {
     mq.addEventListener('change', handler)
     return () => mq.removeEventListener('change', handler)
   }, [])
-
-  if (isMobile) return null
-
-  const cursorX = useMotionValue(-100)
-  const cursorY = useMotionValue(-100)
-
-  const springX = useSpring(cursorX, { stiffness: 200, damping: 25 })
-  const springY = useSpring(cursorY, { stiffness: 200, damping: 25 })
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     setVisible(true)
@@ -69,9 +69,11 @@ export default function MagneticCursor() {
     }
   }, [handleMouseMove])
 
+  if (isMobile) return null
+
   return (
     <motion.div
-      className="fixed top-0 left-0 pointer-events-none z-[9999]"
+      className="fixed top-0 left-0 pointer-events-none z-50"
       initial={{ opacity: 0 }}
       animate={{ opacity: visible ? 1 : 0 }}
       transition={{ duration: 0.25, ease: 'easeInOut' }}
@@ -88,11 +90,11 @@ export default function MagneticCursor() {
               width: isPullActive ? 48 : 32,
               height: isPullActive ? 48 : 32,
               borderColor: isPullActive
-                ? 'rgba(0,255,149,0.6)'
-                : 'rgba(0,255,149,0.25)',
+                ? 'rgba(0,204,122,0.6)'
+                : 'rgba(0,204,122,0.25)',
               boxShadow: isPullActive
-                ? '0 0 24px rgba(0,255,149,0.12)'
-                : '0 0 0px rgba(0,255,149,0)',
+                ? '0 0 24px rgba(0,204,122,0.12)'
+                : '0 0 0px rgba(0,204,122,0)',
             }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
           />
@@ -103,8 +105,8 @@ export default function MagneticCursor() {
               width: isPullActive ? 8 : 6,
               height: isPullActive ? 8 : 6,
               boxShadow: isPullActive
-                ? '0 0 14px rgba(0,255,149,0.6)'
-                : '0 0 6px rgba(0,255,149,0.35)',
+                ? '0 0 14px rgba(0,204,122,0.6)'
+                : '0 0 6px rgba(0,204,122,0.35)',
             }}
             transition={{ type: 'spring', stiffness: 300, damping: 25 }}
           />

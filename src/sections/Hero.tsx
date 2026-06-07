@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { containerVariants, itemVariants } from '../animations/variants'
 import Container from '../components/layout/Container'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight } from '@phosphor-icons/react'
 import { useState, useCallback, useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -117,10 +117,9 @@ function CodeWindow() {
       >
         {/* Window header */}
         <div className="flex items-center gap-2 px-4 py-3 border-b border-neutral-800/60 bg-neutral-900/40">
-          <div className="flex gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-red-500/70" />
-            <div className="w-3 h-3 rounded-full bg-yellow-500/70" />
-            <div className="w-3 h-3 rounded-full bg-green-500/70" />
+          <div className="flex items-center gap-2 text-text-tertiary">
+            <div className="w-3 h-3 rounded-sm bg-accent/30" />
+            <span className="text-[10px] font-mono tracking-wider uppercase opacity-50">Terminal</span>
           </div>
           {/* File tab */}
           <motion.div
@@ -257,7 +256,7 @@ export default function Hero() {
                 variants={itemVariants}
                 className="inline-block"
               >
-                <span className="text-accent text-sm font-mono tracking-widest uppercase">
+                <span className="text-accent text-sm font-mono tracking-wide">
                   {t('hero.welcome')}
                 </span>
               </motion.div>
@@ -290,7 +289,7 @@ export default function Hero() {
             >
               <motion.a
                 href="#projects"
-                whileHover={{ scale: 1.05, boxShadow: '0 0 24px rgba(0, 255, 149, 0.3)' }}
+                whileHover={{ scale: 1.05, boxShadow: '0 0 24px rgba(0, 204, 122, 0.3)' }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-accent text-bg-primary font-semibold rounded-lg flex items-center justify-center gap-2 hover:bg-accent-light transition-colors"
               >
@@ -300,7 +299,7 @@ export default function Hero() {
 
               <motion.a
                 href="#contact"
-                whileHover={{ scale: 1.05, borderColor: 'rgba(0, 255, 149, 0.5)', boxShadow: '0 0 16px rgba(0, 255, 149, 0.2)' }}
+                whileHover={{ scale: 1.05, borderColor: 'rgba(0, 204, 122, 0.5)', boxShadow: '0 0 16px rgba(0, 204, 122, 0.2)' }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 border border-neutral-700 text-text-primary font-semibold rounded-lg flex items-center justify-center gap-2 hover:border-accent transition-all"
               >

@@ -2,7 +2,7 @@ import { motion, AnimatePresence, type Variants } from 'framer-motion'
 import { useState, useEffect, useCallback } from 'react'
 import { createPortal } from 'react-dom'
 import { useTranslation } from 'react-i18next'
-import { Menu, X } from 'lucide-react'
+import { List, X } from '@phosphor-icons/react'
 import LanguageSwitcher from '../ui/LanguageSwitcher'
 
 const mobileNavVariants: Variants = {
@@ -135,7 +135,7 @@ export default function Navbar() {
               className={`px-4 py-2 text-sm transition-colors rounded-lg ${
                 activeLink === item.id ? 'text-accent' : 'text-text-secondary hover:text-text-primary'
               }`}
-              whileHover={{ backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
+              whileHover={{ backgroundColor: 'rgba(0, 204, 122, 0.08)' }}
             >
               {item.label}
             </motion.a>
@@ -164,7 +164,7 @@ export default function Navbar() {
             aria-expanded={isMobileMenuOpen}
             className="p-2 text-text-primary hover:text-accent transition-colors"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={24} /> : <List size={24} />}
           </button>
         </div>
       </div>
@@ -201,7 +201,7 @@ export default function Navbar() {
               <div className="relative flex items-center justify-between px-6 py-4">
                 {/* Accent bar at top */}
                 <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent to-accent/40" />
-                <span className="font-display font-bold text-lg text-text-primary">{t('nav.home')}</span>
+                <span className="font-display font-bold text-lg text-text-primary">Navigation</span>
                 <button
                   onClick={closeMenu}
                   aria-label="Close menu"

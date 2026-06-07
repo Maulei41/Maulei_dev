@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Code2 as GithubIcon, Share2 as LinkedinIcon, Mail, ExternalLink } from 'lucide-react'
+import { GithubLogo, LinkedinLogo, Envelope, ArrowSquareOut } from '@phosphor-icons/react'
 import { useTranslation } from 'react-i18next'
 
 export default function Footer() {
@@ -10,20 +10,20 @@ export default function Footer() {
     {
       name: 'GitHub',
       socialKey: 'github',
-      url: 'https://github.com/Maulei41',
-      icon: GithubIcon,
+      url: 'https://github.com/hoyin99999',
+      icon: GithubLogo,
     },
     {
       name: 'LinkedIn',
       socialKey: 'linkedin',
       url: 'https://www.linkedin.com/in/ho-yin-li-527156336/',
-      icon: LinkedinIcon,
+      icon: LinkedinLogo,
     },
     {
       name: 'Email',
       socialKey: 'email',
       url: 'mailto:hoyin99999@gmail.com',
-      icon: Mail,
+      icon: Envelope,
     },
   ]
 
@@ -53,7 +53,7 @@ export default function Footer() {
                 { label: t('footer.links.about'), href: '#about' },
                 { label: t('footer.links.projects'), href: '#projects' },
                 { label: t('footer.links.experience'), href: '#experience' },
-                { label: t('footer.links.resume'), href: '/resume.pdf' },
+                { label: t('footer.links.resume'), href: '/LiHoYin_resume.pdf' },
               ].map((link) => (
                 <li key={link.label}>
                   <motion.a
@@ -62,7 +62,7 @@ export default function Footer() {
                     className="text-text-secondary hover:text-accent transition-colors text-sm flex items-center gap-1"
                   >
                     {link.label}
-                    {link.href.startsWith('/') && <ExternalLink size={12} />}
+                    {link.href.startsWith('/') && <ArrowSquareOut size={12} />}
                   </motion.a>
                 </li>
               ))}
@@ -81,7 +81,7 @@ export default function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1, color: '#00FF95' }}
+                    whileHover={{ scale: 1.1, color: '#00CC7A' }}
                     whileTap={{ scale: 0.95 }}
                     className="text-text-secondary hover:text-accent transition-colors"
                     title={t(`contact.social.${social.socialKey}`)}

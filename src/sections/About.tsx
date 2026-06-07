@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion'
 import { containerVariants, itemVariants } from '../animations/variants'
 import Container from '../components/layout/Container'
-import { Code2, Zap, Brain, Database } from 'lucide-react'
+import { Code, Lightning, Brain, Database } from '@phosphor-icons/react'
 import { useRef, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -19,8 +19,8 @@ export default function About() {
   const interestItems = [
     { icon: Database },
     { icon: Brain },
-    { icon: Zap },
-    { icon: Code2 },
+    { icon: Lightning },
+    { icon: Code },
   ]
 
   return (
@@ -35,7 +35,7 @@ export default function About() {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <span className="text-accent text-sm font-mono tracking-widest uppercase">
+            <span className="text-accent text-sm font-mono tracking-wide">
               {t('about.header')}
             </span>
             <h2 className="font-display font-bold text-4xl lg:text-5xl text-text-primary">
@@ -97,7 +97,7 @@ export default function About() {
                     className="group p-6 rounded-lg border border-neutral-800/50 bg-bg-primary/50 hover:border-accent/50 hover:bg-bg-primary/80 transition-all"
                   >
                     <motion.div
-                      whileHover={{ scale: 1.1, color: '#00FF95' }}
+                      whileHover={{ scale: 1.1, color: '#00CC7A' }}
                       className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-4 text-text-secondary group-hover:text-accent transition-colors"
                     >
                       <Icon size={24} />
@@ -124,7 +124,7 @@ export default function About() {
               ].map((tech) => (
                 <motion.div
                   key={tech}
-                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(0, 255, 149, 0.1)' }}
+                  whileHover={{ scale: 1.05, backgroundColor: 'rgba(0, 204, 122, 0.1)' }}
                   className="px-4 py-3 rounded-lg bg-bg-primary border border-neutral-800/30 text-text-secondary text-sm text-center hover:text-accent transition-all"
                 >
                   {tech}

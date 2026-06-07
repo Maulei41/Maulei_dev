@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { containerVariants, itemVariants, cardHoverVariants } from '../animations/variants'
 import Container from '../components/layout/Container'
 import { projects } from '../data/projects'
-import { ExternalLink, Code2 as GithubIcon } from 'lucide-react'
+import { ArrowSquareOut, GithubLogo } from '@phosphor-icons/react'
 import { useRef, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -31,7 +31,7 @@ export default function Projects() {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <span className="text-accent text-sm font-mono tracking-widest uppercase">
+            <span className="text-accent text-sm font-mono tracking-wide">
               {t('projects.header')}
             </span>
             <h2 className="font-display font-bold text-4xl lg:text-5xl text-text-primary">
@@ -85,7 +85,7 @@ export default function Projects() {
                           {project.technologies.map((tech) => (
                             <span
                               key={tech}
-                              className="px-3 py-1 text-xs rounded-full bg-accent/10 text-accent border border-accent/30"
+                              className="px-2 py-0.5 text-[11px] rounded bg-accent/10 text-accent border border-accent/20 font-medium"
                             >
                               {tech}
                             </span>
@@ -102,7 +102,7 @@ export default function Projects() {
                               whileHover={{ scale: 1.05, x: 4 }}
                               className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors"
                             >
-                              <GithubIcon size={18} />
+                              <GithubLogo size={18} />
                               <span>{t('projects.github')}</span>
                             </motion.a>
                           )}
@@ -114,7 +114,7 @@ export default function Projects() {
                               whileHover={{ scale: 1.05, x: 4 }}
                               className="flex items-center gap-2 text-text-secondary hover:text-accent transition-colors"
                             >
-                              <ExternalLink size={18} />
+                              <ArrowSquareOut size={18} />
                               <span>{t('projects.liveDemo')}</span>
                             </motion.a>
                           )}
@@ -164,7 +164,7 @@ export default function Projects() {
                       {project.technologies.slice(0, 3).map((tech) => (
                         <span
                           key={tech}
-                          className="px-2 py-1 text-xs rounded-full bg-accent/10 text-accent border border-accent/30"
+                          className="px-2 py-0.5 text-[11px] rounded bg-accent/10 text-accent border border-accent/20 font-medium"
                         >
                           {tech}
                         </span>
@@ -187,7 +187,7 @@ export default function Projects() {
                           whileHover={{ scale: 1.1 }}
                           className="text-text-tertiary hover:text-accent transition-colors"
                         >
-                          <GithubIcon size={16} />
+                          <GithubLogo size={16} />
                         </motion.a>
                       )}
                       {project.liveUrl && (
@@ -198,7 +198,7 @@ export default function Projects() {
                           whileHover={{ scale: 1.1 }}
                           className="text-text-tertiary hover:text-accent transition-colors"
                         >
-                          <ExternalLink size={16} />
+                          <ArrowSquareOut size={16} />
                         </motion.a>
                       )}
                     </div>

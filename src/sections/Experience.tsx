@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion'
 import { containerVariants, itemVariants, timelineItemVariants } from '../animations/variants'
 import Container from '../components/layout/Container'
 import { experiences } from '../data/experience'
-import { CheckCircle2 } from 'lucide-react'
+import { CheckCircle } from '@phosphor-icons/react'
 import { useRef, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
@@ -59,7 +59,7 @@ export default function Experience() {
                 transition={{ delay: idx * 0.05 }}
                 className="text-sm text-text-tertiary flex gap-2"
               >
-                <CheckCircle2 size={16} className="text-accent flex-shrink-0 mt-0.5" />
+                <CheckCircle size={16} className="text-accent flex-shrink-0 mt-0.5" />
                 <span>{t(`experience.data.${exp.i18nKey}.highlights.${idx}`)}</span>
               </motion.li>
             ))}
@@ -72,7 +72,7 @@ export default function Experience() {
             {exp.technologies.map((tech) => (
               <span
                 key={tech}
-                className="px-2 py-1 text-xs rounded-full bg-accent/10 text-accent border border-accent/30"
+                className="px-2 py-0.5 text-[11px] rounded bg-accent/10 text-accent border border-accent/20 font-medium"
               >
                 {tech}
               </span>
@@ -95,7 +95,7 @@ export default function Experience() {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <span className="text-accent text-sm font-mono tracking-widest uppercase">
+            <span className="text-accent text-sm font-mono tracking-wide">
               {t('experience.header')}
             </span>
             <h2 className="font-display font-bold text-4xl lg:text-5xl text-text-primary">

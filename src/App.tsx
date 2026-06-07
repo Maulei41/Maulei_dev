@@ -19,13 +19,21 @@ function App() {
 
   return (
     <>
+      {/* Grain overlay — subtle noise texture */}
+      <div className="grain-overlay" aria-hidden="true" />
+
+      {/* Skip-to-content link */}
+      <a href="#main-content" className="skip-to-content">
+        Skip to content
+      </a>
+
       <MagneticCursor />
       <div className="min-h-screen bg-bg-primary text-text-primary overflow-x-hidden">
       {/* Navigation */}
       <Navbar />
 
       {/* Main Content */}
-      <main className="relative">
+      <main id="main-content" className="relative">
         {/* Hero Section */}
         <Hero />
 
