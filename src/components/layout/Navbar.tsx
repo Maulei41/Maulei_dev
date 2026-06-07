@@ -1,255 +1,304 @@
-import { motion, AnimatePresence, type Variants } from 'framer-motion'
 import { useState, useEffect, useCallback } from 'react'
-import { createPortal } from 'react-dom'
-import { useTranslation } from 'react-i18next'
-import { List, X } from '@phosphor-icons/react'
-import LanguageSwitcher from '../ui/LanguageSwitcher'
+import { AnimatePresence, motion } from 'framer-motion'
+import type { Variants } from 'framer-motion'
 
-const mobileNavVariants: Variants = {
-  hidden: { x: '100%' },
+const navItems = [
+  { label: 'About', href: '#about' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Contact', href: '#contact' },
+]
+
+/* ─── Variants ─── */
+
+const backdropVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.25 } },
+  exit: { opacity: 0, transition: { duration: 0.2 } },
+}
+
+const deckVariants: Variants = {
+  hidden: { opacity: 0, scale: 0.88, y: 20 },
   visible: {
-    x: 0,
-    transition: { type: 'spring' as const, damping: 25, stiffness: 200 },
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 350,
+      damping: 28,
+      mass: 0.8,
+    },
   },
   exit: {
-    x: '100%',
-    transition: { type: 'spring' as const, damping: 25, stiffness: 200 },
+    opacity: 0,
+    scale: 0.92,
+    y: 14,
+    transition: { duration: 0.18, ease: 'easeIn' },
   },
 }
 
-const mobileItemVariants: Variants = {
-  hidden: { opacity: 0, x: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    x: 0,
-    transition: { delay: 0.05 * i, duration: 0.3, ease: 'easeOut' as const },
-  }),
+const listVariants: Variants = {
+  visible: {
+    transition: { staggerChildren: 0.06, delayChildren: 0.08 },
+  },
+  exit: {
+    transition: { staggerChildren: 0.03, staggerDirection: -1 },
+  },
 }
 
-export default function Navbar() {
-  const { t } = useTranslation()
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [activeLink, setActiveLink] = useState('home')
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 12 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'spring', stiffness: 400, damping: 24 },
+  },
+  exit: {
+    opacity: 0,
+    y: -8,
+    transition: { duration: 0.15 },
+  },
+}
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
+/* ─── Animated hamburger / close icon ─── */
+/* Uses <motion.div> bars with CSS transforms instead of SVG path
+   morphing. GPU-accelerated, avoids expensive SVG path interpolation. */
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  // Track active section on scroll using Intersection Observer
-  useEffect(() => {
-    const sectionIds = ['home', 'about', 'projects', 'experience', 'contact']
-    const observers = new Map()
-
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const sectionId = entry.target.id
-          setActiveLink(sectionId)
-        }
-      })
-    }
-
-    const observerOptions = {
-      root: null,
-      rootMargin: '-50% 0px -50% 0px', // Trigger when section is centered in viewport
-      threshold: 0,
-    }
-
-    sectionIds.forEach((id) => {
-      const element = document.getElementById(id)
-      if (element) {
-        const observer = new IntersectionObserver(handleIntersection, observerOptions)
-        observer.observe(element)
-        observers.set(id, observer)
-      }
-    })
-
-    return () => {
-      observers.forEach((observer) => observer.disconnect())
-    }
-  }, [])
-
-  // Prevent body scroll when mobile menu is open
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [isMobileMenuOpen])
-
-  const navItems = [
-    { label: t('nav.home'), href: '#home', id: 'home' },
-    { label: t('nav.about'), href: '#about', id: 'about' },
-    { label: t('nav.projects'), href: '#projects', id: 'projects' },
-    { label: t('nav.experience'), href: '#experience', id: 'experience' },
-    { label: t('nav.contact'), href: '#contact', id: 'contact' },
-  ]
-
-  const handleNavClick = useCallback((id: string) => {
-    setActiveLink(id)
-    setIsMobileMenuOpen(false)
-  }, [])
-
-  const closeMenu = useCallback(() => {
-    setIsMobileMenuOpen(false)
-  }, [])
+function MenuToggle({ open }: { open: boolean }) {
+  const spring = { type: 'spring' as const, stiffness: 400, damping: 24 }
 
   return (
-    <motion.nav
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled || isMobileMenuOpen ? 'bg-bg-primary/80 backdrop-blur-md border-b border-neutral-800/20' : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <motion.a
-          href="#home"
-          onClick={() => setActiveLink('home')}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="font-display font-bold text-xl text-text-primary hover:text-accent transition-colors border pl-2 pr-2 rounded-3xl"
-        >
-          Li Ho Yin
-        </motion.a>
+    <div className="relative w-5 h-5" aria-hidden="true">
+      {/* Top bar → rotates 45° down to form X */}
+      <motion.span
+        className="absolute left-[2px] top-[3px] w-4 h-[2px] bg-current rounded-full origin-center"
+        animate={open ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+        transition={spring}
+      />
+      {/* Middle bar → fades out */}
+      <motion.span
+        className="absolute left-[2px] top-[9px] w-4 h-[2px] bg-current rounded-full origin-center"
+        animate={open ? { opacity: 0 } : { opacity: 1 }}
+        transition={{ duration: 0.12 }}
+      />
+      {/* Bottom bar → rotates -45° up to form X */}
+      <motion.span
+        className="absolute left-[2px] top-[15px] w-4 h-[2px] bg-current rounded-full origin-center"
+        animate={open ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+        transition={spring}
+      />
+    </div>
+  )
+}
 
-        {/* Nav Links (desktop) */}
-        <div className="hidden md:flex items-center gap-1">
-          {navItems.map((item) => (
-            <motion.a
-              key={item.id}
-              href={item.href}
-              onClick={() => setActiveLink(item.id)}
-              className={`px-4 py-2 text-sm transition-colors rounded-lg ${
-                activeLink === item.id ? 'text-accent' : 'text-text-secondary hover:text-text-primary'
-              }`}
-              whileHover={{ backgroundColor: 'rgba(0, 204, 122, 0.08)' }}
-            >
-              {item.label}
-            </motion.a>
-          ))}
-        </div>
+/* ─── Component ─── */
 
-        {/* Right section (desktop) */}
-        <div className="hidden md:flex items-center gap-2">
-          <LanguageSwitcher />
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-6 py-2 bg-accent text-bg-primary font-semibold rounded-lg text-sm hover:bg-accent-light transition-colors"
+export default function Navbar() {
+  const [open, setOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState('')
+
+  // Track which section is currently in view
+  useEffect(() => {
+    const ids = navItems.map((item) => item.href.slice(1))
+    const observers: IntersectionObserver[] = []
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id)
+      if (!el) return
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(`#${id}`)
+            }
+          })
+        },
+        { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' }
+      )
+
+      observer.observe(el)
+      observers.push(observer)
+    })
+
+    return () => observers.forEach((o) => o.disconnect())
+  }, [])
+
+  const close = useCallback(() => setOpen(false), [])
+
+  const handleNavClick = useCallback(
+    (e: React.MouseEvent, href: string) => {
+      e.preventDefault()
+      close()
+      const target = document.querySelector(href)
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' })
+      }
+    },
+    [close]
+  )
+
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') close()
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [open, close])
+
+  return (
+    <>
+      <style>{`
+        @media (max-width: 820px) {
+          body { padding-bottom: 100px; }
+        }
+      `}</style>
+
+      {/* Backdrop */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="nav-backdrop"
+            variants={backdropVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="fixed inset-0 z-[998] bg-black/30 md:hidden"
+            onClick={close}
+            aria-hidden="true"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Mobile deck */}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            key="nav-deck"
+            variants={deckVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="fixed bottom-[90px] left-1/2 -translate-x-1/2 z-[999] flex flex-col min-w-[220px] rounded-2xl overflow-hidden"
+            style={{
+              background: 'rgba(10, 10, 14, 0.62)',
+              backdropFilter: 'blur(32px) saturate(160%)',
+              WebkitBackdropFilter: 'blur(32px) saturate(160%)',
+              border: '1px solid rgba(255, 255, 255, 0.06)',
+              boxShadow:
+                '0 8px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.02), 0 0 20px rgba(255,255,255,0.04)',
+            }}
           >
-            {t('nav.getInTouch')}
-          </motion.a>
-        </div>
+            {/* Edge refraction */}
+            <div
+              className="absolute inset-0 rounded-2xl pointer-events-none"
+              style={{
+                background:
+                  'radial-gradient(160% 80% at 30% 0%, rgba(255,255,255,0.08) 0%, transparent 60%)',
+              }}
+            />
 
-        {/* Mobile hamburger button */}
-        <div className="flex md:hidden items-center gap-2">
-          <LanguageSwitcher />
-          <button
-            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={isMobileMenuOpen}
-            className="p-2 text-text-primary hover:text-accent transition-colors"
-          >
-            {isMobileMenuOpen ? <X size={24} /> : <List size={24} />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile menu drawer - rendered via portal outside navbar */}
-      {isMobileMenuOpen && createPortal(
-        <AnimatePresence>
-          <>
-             {/* Backdrop */}
-             <motion.div
-               key="mobile-backdrop"
-               initial={{ opacity: 0 }}
-               animate={{ opacity: 1 }}
-               exit={{ opacity: 0 }}
-               transition={{ duration: 0.2 }}
-               className="fixed inset-0 bg-black/50 md:hidden z-40"
-               onClick={closeMenu}
-               aria-hidden="true"
-             />
-
-            {/* Drawer */}
             <motion.div
-              key="mobile-drawer"
-              variants={mobileNavVariants}
+              variants={listVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="fixed top-0 right-0 bottom-0 w-72 border-l border-l-accent/20 shadow-2xl md:hidden z-50"
-              style={{ backgroundColor: '#1F1F1F' }}
+              className="relative flex flex-col p-2 gap-[2px]"
             >
-              {/* Inner container for scrollable content */}
-              <div className="flex flex-col h-full">
-              {/* Drawer header with accent bar */}
-              <div className="relative flex items-center justify-between px-6 py-4">
-                {/* Accent bar at top */}
-                <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-accent to-accent/40" />
-                <span className="font-display font-bold text-lg text-text-primary">Navigation</span>
-                <button
-                  onClick={closeMenu}
-                  aria-label="Close menu"
-                  className="p-2 text-text-secondary hover:text-accent transition-colors"
-                >
-                  <X size={20} />
-                </button>
-              </div>
-
-              {/* Navigation links */}
-              <nav className="flex-1 px-4 py-6 space-y-1">
-                {navItems.map((item, idx) => (
-                  <motion.a
-                    key={item.id}
-                    href={item.href}
-                    custom={idx}
-                    variants={mobileItemVariants}
-                    initial="hidden"
-                    animate="visible"
-                    onClick={() => handleNavClick(item.id)}
-                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                      activeLink === item.id
-                        ? 'text-accent bg-accent/10'
-                        : 'text-text-secondary hover:text-text-primary hover:bg-neutral-800/30'
-                    }`}
-                  >
-                    {item.label}
-                  </motion.a>
-                ))}
-              </nav>
-
-              {/* Drawer footer */}
-              <div className="px-6 py-6 border-t border-neutral-800/20 space-y-4">
+              {navItems.map((item) => (
                 <motion.a
-                  href="#contact"
-                  onClick={closeMenu}
-                  whileTap={{ scale: 0.95 }}
-                  className="block w-full px-6 py-3 bg-accent text-bg-primary font-semibold rounded-lg text-center text-sm hover:bg-accent-light transition-colors"
+                  key={item.href}
+                  href={item.href}
+                  variants={itemVariants}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className={`relative block px-4 py-[10px] text-center text-[14px] font-[500] no-underline rounded-full transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-[#2997ff] focus-visible:outline-offset-2 ${
+                    activeSection === item.href
+                      ? 'text-white bg-white/15'
+                      : 'text-white/70 hover:bg-white/10 hover:text-white'
+                  }`}
                 >
-                  {t('nav.getInTouch')}
+                  {item.label}
                 </motion.a>
-              </div>
-              </div>
+              ))}
             </motion.div>
-          </>
-        </AnimatePresence>,
-        document.body
-      )}
-    </motion.nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Bottom pill nav */}
+      <nav
+        role="navigation"
+        aria-label="Main"
+        className="fixed bottom-7 left-1/2 -translate-x-1/2 z-[1000] flex items-center gap-5 px-6 py-[10px] rounded-full"
+        style={{
+          background: 'rgba(10, 10, 14, 0.78)',
+          backdropFilter: 'blur(28px) saturate(180%)',
+          WebkitBackdropFilter: 'blur(28px) saturate(180%)',
+          border: '1px solid rgba(255, 255, 255, 0.06)',
+          boxShadow: '0 8px 40px rgba(0, 0, 0, 0.35)',
+        }}
+      >
+        {/* Edge refraction */}
+        <div
+          className="absolute inset-0 rounded-full pointer-events-none"
+          style={{
+            background:
+              'radial-gradient(180% 60% at 25% 50%, rgba(255,255,255,0.10) 0%, transparent 70%)',
+          }}
+        />
+
+        {/* Outer ambient glow */}
+        <div
+          className="absolute -inset-1 rounded-[calc(9999px+4px)] pointer-events-none -z-[1]"
+          style={{
+            background:
+              'radial-gradient(60% 80% at 50% 50%, rgba(41,151,255,0.08), rgba(255,255,255,0.04) 40%, transparent 70%)',
+            filter: 'blur(6px)',
+          }}
+        />
+
+        {/* Logo */}
+        <a
+          href="#hero"
+          className="flex items-center shrink-0 no-underline text-white font-display font-semibold text-sm tracking-tight"
+        >
+          Li Ho Yin
+        </a>
+
+        {/* Desktop links */}
+        <ul className="hidden md:flex items-center gap-1 list-none m-0 p-0">
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <a
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href)}
+                className={`block px-[14px] py-2 text-[13px] font-[500] tracking-[-0.01em] no-underline rounded-full transition-all duration-200 focus-visible:outline-2 focus-visible:outline-[#2997ff] focus-visible:outline-offset-2 ${
+                  activeSection === item.href
+                    ? 'text-white bg-white/15'
+                    : 'text-white/70 hover:bg-white/10 hover:text-white'
+                }`}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* Mobile toggle with animated SVG */}
+        <motion.button
+          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? 'Close navigation' : 'Open navigation'}
+          aria-expanded={open}
+          animate={open ? 'open' : 'closed'}
+          initial="closed"
+          className="flex md:hidden items-center justify-center bg-transparent border-none text-white/70 cursor-pointer w-9 h-9 rounded-full hover:bg-white/10 transition-colors duration-200"
+        >
+          <MenuToggle open={open} />
+        </motion.button>
+      </nav>
+    </>
   )
 }

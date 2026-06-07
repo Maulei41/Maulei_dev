@@ -7,7 +7,7 @@ export interface ContactInfo {
 
 export const contact: ContactInfo = {
   email: 'Hoyin99999@gmail.com',
-  github: 'https://github.com/hoyin99999',
+  github: 'https://github.com/Maulei41',
   linkedin: 'https://www.linkedin.com/in/ho-yin-li-527156336/',
   resume: '/LiHoYin_resume.pdf',
 }

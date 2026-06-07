@@ -3,28 +3,12 @@ import React from 'react'
 interface ContainerProps {
   children: React.ReactNode
   className?: string
-  size?: 'sm' | 'md' | 'lg' | 'full'
   id?: string
 }
 
-export default function Container({
-  children,
-  className = '',
-  size = 'lg',
-  id,
-}: ContainerProps) {
-  const sizeClasses = {
-    sm: 'max-w-2xl',
-    md: 'max-w-4xl',
-    lg: 'max-w-7xl',
-    full: 'w-full',
-  }
-
+export default function Container({ children, className = '', id }: ContainerProps) {
   return (
-    <div
-      id={id}
-      className={`mx-auto px-6 ${sizeClasses[size]} ${className}`}
-    >
+    <div id={id} className={`max-w-[1120px] mx-auto px-8 max-sm:px-5 ${className}`}>
       {children}
     </div>
   )
