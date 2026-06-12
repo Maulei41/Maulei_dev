@@ -235,6 +235,57 @@
   .btn-apple:active {
     transform: scale(0.97);
   }
+
+  /* Glass pill with stacked semi-transparent layers */
+  .glass-pill-stacked {
+    position: relative;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 9999px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  .glass-pill-stacked::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -3px;
+    right: -3px;
+    bottom: -5px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    z-index: -1;
+  }
+
+  .glass-pill-stacked::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    right: 3px;
+    bottom: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 9999px;
+    z-index: -2;
+  }
+
+  /* Dark frosted glass container for Apple progressive page indicator */
+  .glass-pill-dark {
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 9999px;
+  }
 }
 
 @layer utilities {
@@ -246,6 +297,15 @@
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover { background: var(--border-mid); }
+
+  /* Hide scrollbar for carousel */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
   /* Prevent layout shift */
   html { scroll-padding-top: 40px; }

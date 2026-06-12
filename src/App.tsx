@@ -41,6 +41,7 @@ function App() {
 
       {/* Footer */}
       <Footer />
+      <div id="nav-sentinel" />
     </>    
   )
 }

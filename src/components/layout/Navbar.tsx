@@ -103,6 +103,23 @@ export default function Navbar() {
   useEffect(() => {
     const ids = navItems.map((item) => item.href.slice(1))
     const observers: IntersectionObserver[] = []
+    const lastHref = navItems[navItems.length - 1].href
+    const intersecting = new Set<string>()
+
+    const pickLowest = () => {
+      let lowest = -1
+      let lowestId = ''
+      intersecting.forEach((id) => {
+        const idx = ids.indexOf(id)
+        if (idx > lowest) {
+          lowest = idx
+          lowestId = id
+        }
+      })
+      if (lowestId) {
+        setActiveSection(`#${lowestId}`)
+      }
+    }
 
     ids.forEach((id) => {
       const el = document.getElementById(id)
@@ -112,9 +129,12 @@ export default function Navbar() {
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              setActiveSection(`#${id}`)
+              intersecting.add(id)
+            } else {
+              intersecting.delete(id)
             }
           })
+          pickLowest()
         },
         { threshold: 0.3, rootMargin: '-80px 0px -40% 0px' }
       )
@@ -122,6 +142,24 @@ export default function Navbar() {
       observer.observe(el)
       observers.push(observer)
     })
+
+    // Bottom sentinel — when the user reaches the page end,
+    // highlight the last nav item
+    const sentinel = document.getElementById('nav-sentinel')
+    if (sentinel) {
+      const sentinelObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(lastHref)
+            }
+          })
+        },
+        { threshold: 0, rootMargin: '0px' }
+      )
+      sentinelObserver.observe(sentinel)
+      observers.push(sentinelObserver)
+    }
 
     return () => observers.forEach((o) => o.disconnect())
   }, [])
@@ -152,9 +190,11 @@ export default function Navbar() {
   return (
     <>
       <style>{`
-        @media (max-width: 820px) {
-          body { padding-bottom: 100px; }
+        body {
+          padding-bottom: 120px;
+          background: #0a0a0a;
         }
+        html { background: #0a0a0a; }
       `}</style>
 
       {/* Backdrop */}

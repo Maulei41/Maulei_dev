@@ -14,6 +14,19 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: 'university-hall',
+    i18nKey: 'university-hall',
+    title: 'University Hall Website',
+    description: 'Production-grade React SPA for a historic HKU declared monument with academia design system',
+    longDescription:
+        'Architected and shipped a fully responsive 7-page React single-page application for University Hall, The University of Hong Kong. Built a custom dark academia design system with Tailwind CSS featuring a heritage-inspired colour palette, Playfair Display typography, and Lenis-powered smooth scrolling. Integrated as a Must-Use WordPress plugin to serve the React build through WordPress without a headless CMS, enabling non-technical staff to manage surrounding content. Includes a multi-step application form with validation, a interactive floor plan viewer, and a full facility gallery with category filtering. Achieved zero-error TypeScript throughout active feature development.',
+    technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'Framer Motion', 'WordPress', 'PHP'],
+    github: 'https://github.com/Maulei41/University_Hall.dev',
+    liveUrl: 'https://uhall.hku.hk/',
+    impact: 'Zero-error TypeScript mu-plugin — seamless coexistence with legacy WordPress CMS for a historic university hall',
+    featured: true,
+  },
+    {
     id: 'spendify',
     i18nKey: 'spendify',
     title: 'Spendify – Personal Finance Tracker',
@@ -49,4 +62,5 @@ export const projects: Project[] = [
     impact: '80% pose classification accuracy with 200ms inference latency for real-time feedback',
     featured: true,
   },
+
 ]
