@@ -17,7 +17,7 @@ export default function Hero() {
           <ScrollReveal className="mb-6">
             <div className="flex justify-center">
               <img
-                src="/Maulei_logo.jpeg"
+                src="/Maulei_logo.png"
                 alt="Li Ho Yin logo"
                 className="h-14 w-auto rounded-xl"
               />
