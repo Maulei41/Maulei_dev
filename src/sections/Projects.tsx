@@ -67,20 +67,33 @@ export default function Projects() {
     let rafId: number
 
     const tick = (now: number) => {
-      if (lastTickRef.current > 0 && !isPausedRef.current) {
+      // Don't accumulate progress while a programmatic advance is in flight
+      if (lastTickRef.current > 0 && !isPausedRef.current && !advancingRef.current) {
         const delta = Math.min(now - lastTickRef.current, AUTO_ADVANCE_MS)
         progressRef.current += delta / AUTO_ADVANCE_MS
 
-        if (progressRef.current >= 1 && !advancingRef.current) {
+        if (progressRef.current >= 1) {
           advancingRef.current = true
           const nextIdx = (activeIndexRef.current + 1) % projects.length
           const el = scrollRef.current
-          if (el) scrollCardIntoView(el, nextIdx)
+          if (el) {
+            scrollCardIntoView(el, nextIdx)
+
+            const onScrollEnd = () => {
+              advancingRef.current = false
+              el.removeEventListener('scrollend', onScrollEnd)
+            }
+            el.addEventListener('scrollend', onScrollEnd, { once: true })
+            // Safety fallback — if scrollend doesn't fire, release after 1000ms
+            setTimeout(() => {
+              el.removeEventListener('scrollend', onScrollEnd)
+              advancingRef.current = false
+            }, 1000)
+          }
           activeIndexRef.current = nextIdx
           setActiveIndex(nextIdx)
           progressRef.current = 0
           setProgress(0)
-          setTimeout(() => { advancingRef.current = false }, 600)
         } else {
           setProgress(progressRef.current)
         }
